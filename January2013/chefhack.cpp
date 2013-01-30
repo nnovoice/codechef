@@ -7,11 +7,12 @@ typedef unsigned long long int ULLI;
 #include <stdio.h>
 using namespace std;
 
+int grid[MAXGRIDSIZE][MAXGRIDSIZE];
+
 enum ServerType {UNKNOWN, EVEN, ODD, PRIME};
 class chefhack {
 	int nCases;
 	int N;
-	int** grid;
 	int serverState[MAXGRIDSIZE][MAXGRIDSIZE];
 	ServerType gridServerType[MAXGRIDSIZE][MAXGRIDSIZE];
 	ULLI nUnsuccessfulTries;
@@ -22,37 +23,25 @@ private:
 	void init() {
 		N = 0;
 		nUnsuccessfulTries = 0;
-		grid = new int*[MAXGRIDSIZE];
-		for(int i = 0; i < MAXGRIDSIZE; ++i)
-			grid[i] = new int[MAXGRIDSIZE];
 	}
 	void initGrid() {
-		for (int i = 0; i < MAXGRIDSIZE; ++i) {
-              memset(grid[i], 0, sizeof(grid[i][0]) * MAXGRIDSIZE);
-        }
+		memset(grid, 0, sizeof(grid[0][0]) * MAXGRIDSIZE * MAXGRIDSIZE);
 		memset(serverState, 0, sizeof(serverState[0][0]) * MAXGRIDSIZE * MAXGRIDSIZE);
 		memset(gridServerType, UNKNOWN, sizeof(gridServerType[0][0]) * MAXGRIDSIZE * MAXGRIDSIZE);
 	}
 	void initPrimes() {
 		genPrimesUsingEratosthenesSieve(NUMMAX);
 	}
-	void printServerStates() {
-		for(int j = 1; j < MAXGRIDSIZE; ++j) {
-			for(int k = 1; k < MAXGRIDSIZE; ++k) {
-				//cout << serverState[j][k] << " ";
-			}
-			//cout << endl;
-		}
-	}
 public:
 	chefhack() { 
-		//freopen("C:\\data\\personal\\programming\\codechef\\input_files\\Jan2013\\chefhack.txt", "r", stdin); 
+		//freopen("C:\\data\\personal\\programming\\codechef\\input_files\\Jan2013\\chefhack-basic-test-anton.txt", "r", stdin); 
 		init(); 
 		initGrid(); 
 		initPrimes(); 
 	}
 	~chefhack() {
 		delete [] isComposite;
+		delete [] primeIndexStore;
 	}
 
 	void hack() {
@@ -83,57 +72,57 @@ private:
 			for(int k = 1; k <= N; ++k) {
 				type = getServerType(j, k, grid[j][k]);
 
-				cout << "serverState[" << j << "][" << k << "] is=" << serverState[j][k] << " server type= " << type << endl;
+				//cout << "serverState[" << j << "][" << k << "] is=" << serverState[j][k] << " server type= " << type << endl;
 				if (serverState[j][k] == 0) {
-					if(isANeighbourCracked(j, k, type) == false) {
-						cout << j << " " << k << " " << grid[j][k] << "is LOCKED... ";
-						curTries = getNumUnsuccessfulTries(j, k, grid[j][k], type);
-						nUnsuccessfulTries += (ULLI) curTries;
-						cout << "Current tries= " << curTries << " interim Tries= " << nUnsuccessfulTries << endl;
-					}
-				}
+					//	//cout << j << " " << k << " " << grid[j][k] << "is LOCKED... ";
+					curTries = getNumUnsuccessfulTries(j, k, grid[j][k], type);
+					nUnsuccessfulTries += (ULLI) curTries;
+					//	//cout << "Current tries= " << curTries << " interim Tries= " << nUnsuccessfulTries << endl;
 
-				unlockServers(j, k, type);
+					unlockServersUsingDFS(j, k, type);
+				}
 			}
 		}
 		//printf("%llu\n", nUnsuccessfulTries);
 		cout << nUnsuccessfulTries << endl;
 	}
 
-	bool isANeighbourCracked(int i, int j, ServerType type) {
-		if(type == PRIME)
+	bool areIndicesValid(int i, int j) {
+		//cout << "[" << i << "," << j << "]" << endl;
+		if(i < 1 )
 			return false;
-
-		int rows[4] = {i - 1, i,     i + 1, i};
-		int cols[4] = {j,     j - 1, j,     j + 1,};
-
-		ServerType neighbourType = UNKNOWN;
-		for(int m = 0; m < 4; ++m) {
-			if (serverState[rows[m]][cols[m]] == 1) { //if unlocked
-				neighbourType = getServerType(rows[m], cols[m], grid[rows[m]][cols[m]]);
-				if (type == neighbourType) {
-					return true;
-				}
-			}
-		}
-		return false;
+		if(j < 1)
+			return false;
+		if(i > N)
+			return false;
+		if(j > N)
+			return false;
+			
+		return true;
 	}
 
-	void unlockServers(int i, int j, ServerType type) {
-		serverState[i][j] = 1;
-
-		if(type == PRIME)
+	void unlockServersUsingDFS(int i, int j, ServerType type) {
+		if(areIndicesValid(i, j) == false)
 			return;
 
-		int rows[4] = {i - 1, i + 1, i, i};
-		int cols[4] = {j, j, j + 1, j - 1};
+		int rows[4] = {i - 1, i + 1, i,     i};
+		int cols[4] = {j,     j,     j - 1, j + 1};
 		ServerType neighbourType = UNKNOWN;
-		for(int m = 0; m < 4; ++m) {
-			if (serverState[rows[m]][cols[m]] == 0) {
-				neighbourType = getServerType(rows[m], cols[m], grid[rows[m]][cols[m]]);
-				if (type == neighbourType) {
-					//cout << i << " " << j << " neighbour " << rows[m] << " " << cols[m] << "is unlocked" << endl;
-					serverState[rows[m]][cols[m]] = 1;
+		if(serverState[i][j] == 0) {
+			serverState[i][j] = 1;
+			if(type == PRIME)
+				return;
+			for(int m = 0; m < 4; ++m) {
+				if(areIndicesValid(rows[m], cols[m]) == false)
+					continue;
+
+				if (serverState[rows[m]][cols[m]] == 0) {
+					neighbourType = getServerType(rows[m], cols[m], grid[rows[m]][cols[m]]);
+					if (type == neighbourType) {
+						//cout << i << " " << j << " neighbour " << rows[m] << " " << cols[m] << "is unlocked" << endl;
+						//serverState[rows[m]][cols[m]] = 1;
+						unlockServersUsingDFS(rows[m], cols[m], type);
+					}
 				}
 			}
 		}
@@ -176,7 +165,7 @@ private:
 
 	int getNumUnsuccessfulTries(int j, int k, int value, ServerType type) {
 		int tries = 0;
-		if (serverState[j][k] == 1)
+		if (serverState[j][k] == 1) // if unlocked, return 0
 			return tries;
 
 		switch(type) {
