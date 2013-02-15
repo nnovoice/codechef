@@ -7,18 +7,19 @@ typedef unsigned long long int ULLI;
 #include <stdio.h>
 using namespace std;
 
-int grid[MAXGRIDSIZE][MAXGRIDSIZE];
-
 enum ServerType {UNKNOWN, EVEN, ODD, PRIME};
+
+int grid[MAXGRIDSIZE][MAXGRIDSIZE];
+int serverState[MAXGRIDSIZE][MAXGRIDSIZE];
+ServerType gridServerType[MAXGRIDSIZE][MAXGRIDSIZE];
+bool isComposite[NUMMAX + 1];
+int primeIndexStore[NUMMAX + 1];
+
 class chefhack {
 	int nCases;
 	int N;
-	int serverState[MAXGRIDSIZE][MAXGRIDSIZE];
-	ServerType gridServerType[MAXGRIDSIZE][MAXGRIDSIZE];
 	ULLI nUnsuccessfulTries;
-
-	bool *isComposite;
-	int* primeIndexStore;
+	
 private:
 	void init() {
 		N = 0;
@@ -40,8 +41,8 @@ public:
 		initPrimes(); 
 	}
 	~chefhack() {
-		delete [] isComposite;
-		delete [] primeIndexStore;
+		//delete [] isComposite;
+		//delete [] primeIndexStore;
 	}
 
 	void hack() {
@@ -101,30 +102,51 @@ private:
 		return true;
 	}
 
+	void initNeighbourRowsCols(int* pRows, int* pCols, int i, int j) {
+		pRows[0] = i - 1;
+		pRows[1] = i + 1;
+		pRows[2] = i;
+		pRows[3] = i;
+		pCols[0] = j;
+		pCols[1] = j;
+		pCols[2] = j -1;
+		pCols[3] = j + 1;
+	}
+
 	void unlockServersUsingDFS(int i, int j, ServerType type) {
 		if(areIndicesValid(i, j) == false)
 			return;
+		
+		int* pRows = new int[4];
+		int* pCols = new int[4];
+		initNeighbourRowsCols(pRows, pCols, i, j);
 
-		int rows[4] = {i - 1, i + 1, i,     i};
-		int cols[4] = {j,     j,     j - 1, j + 1};
 		ServerType neighbourType = UNKNOWN;
 		if(serverState[i][j] == 0) {
 			serverState[i][j] = 1;
 			if(type == PRIME)
 				return;
 			for(int m = 0; m < 4; ++m) {
-				if(areIndicesValid(rows[m], cols[m]) == false)
+				if(areIndicesValid(pRows[m], pCols[m]) == false)
 					continue;
 
-				if (serverState[rows[m]][cols[m]] == 0) {
-					neighbourType = getServerType(rows[m], cols[m], grid[rows[m]][cols[m]]);
+				if (serverState[pRows[m]][pCols[m]] == 0) {
+					neighbourType = getServerType(pRows[m], pCols[m], grid[pRows[m]][pCols[m]]);
 					if (type == neighbourType) {
-						//cout << i << " " << j << " neighbour " << rows[m] << " " << cols[m] << "is unlocked" << endl;
-						//serverState[rows[m]][cols[m]] = 1;
-						unlockServersUsingDFS(rows[m], cols[m], type);
+						//cout << i << " " << j << " neighbour " << pRows[m] << " " << cols[m] << "is unlocked" << endl;
+						//serverState[pRows[m]][cols[m]] = 1;
+						unlockServersUsingDFS(pRows[m], pCols[m], type);
 					}
 				}
 			}
+		}
+		if (pRows != 0) {
+			delete [] pRows;
+			pRows = 0;
+		}
+		if (pCols != 0) {
+			delete [] pCols;
+			pCols = 0;
 		}
 	}
 
@@ -184,14 +206,13 @@ private:
 		}
 		return tries;
 	}
-//public:
+
 	void genPrimesUsingEratosthenesSieve(int upperBound) {
 		int upperBoundSquareRoot = (int)sqrt((double)upperBound);
-		isComposite = new bool[upperBound + 1];
-		primeIndexStore = new int[upperBound + 1];
 
 		memset(isComposite, 0, sizeof(bool) * (upperBound + 1));
 		memset(primeIndexStore, 0, sizeof(int) * (upperBound + 1));
+
 		isComposite[0] = true;
 		isComposite[1] = true;
 		int primeIndex = -1;
@@ -217,6 +238,5 @@ private:
 int main() {
 	chefhack po;
 	po.hack();
-	//po.genPrimesUsingEratosthenesSieve(10000000);
 	return 0;
 }
