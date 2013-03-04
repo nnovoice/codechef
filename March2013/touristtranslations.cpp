@@ -35,7 +35,7 @@ private:
 			if (ch == '_') {
 				sentence[i] = ' ';
 			}
-			else if (ch == '?' || ch == '.' || ch == '!') {
+			else if (ch == '?' || ch == '.' || ch == '!' || ch == ',') {
 				sentence[i] = ch; // not required actually!
 			}
 			else {
