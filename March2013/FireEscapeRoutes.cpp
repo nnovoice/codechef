@@ -1,11 +1,12 @@
 #include <iostream>
-#include <bitset>
-#define MAXSIZE 100001
 #define MAX 100000
-using namespace std;
+#define NUMINTS 3125
 
-bitset <MAXSIZE> friendsMatrix[MAXSIZE];
-bitset <MAXSIZE> employees;
+int friendsMatrix[NUMINTS * NUMINTS];
+int employees[NUMINTS];
+int visited[NUMINTS];
+
+using namespace std;
 
 class FireEscapeRoutes {
 private:
@@ -15,16 +16,23 @@ private:
 	int employeeNum1, employeeNum2;
 private:
 	void init() {
-		for (int i = 0; i < (nEmployees + 1); ++i) {
-			friendsMatrix[i].reset();
-		}
-		employees.reset();
+		memset(friendsMatrix, 0, sizeof(int) * NUMINTS * NUMINTS);
+		memset(employees, 0, sizeof(int) * NUMINTS);
+		memset(visited, 0, sizeof(int) * NUMINTS);
+	}
+	void setFriends() {
+		
+	}
+	void setEmployees() {
+	}
+	bool isFriend(int* pEmployee1, int* pEmployee2) {
+		return true;
 	}
 	void printFriendsMatrix() {
 		for (int i = 1; i <= nEmployees; ++i) {
 			cout << "Friends of " << i << " : ";
 			for (int j = 1; j <= nEmployees; ++j) {
-				if (friendsMatrix[i].test(j)) {
+				if (isFriend(&i, &j)) {
 					cout << j << " ";
 				}
 			}
@@ -34,6 +42,8 @@ private:
 public:
 	FireEscapeRoutes() {
 		freopen("C:\\data\\personal\\programming\\codechef\\input_files\\March2013\\fireescaperoutes.txt", "r", stdin);
+	}
+	~FireEscapeRoutes() {
 	}
 	void create() {
 		cin >> nCases;
@@ -45,11 +55,9 @@ public:
 			for (int i = 1; i <= nRelations; ++i) {
 				cin >> employeeNum1 >> employeeNum2;
 
-				friendsMatrix[employeeNum1].set(employeeNum2);
-				friendsMatrix[employeeNum2].set(employeeNum1);
+				setFriends();
 				
-				employees.set(employeeNum1);
-				employees.set(employeeNum2);
+				setEmployees();
 			}
 
 			printFriendsMatrix();
