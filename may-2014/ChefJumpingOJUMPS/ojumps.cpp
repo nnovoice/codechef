@@ -1,22 +1,22 @@
-#include <iostream>
+#include <stdio.h>
 //#include <climits>
 
-using namespace std;
+//using namespace std;
 
 int main()
 {
     //cout << "ulonglongmax=" << ULONG_LONG_MAX << endl;
     unsigned long long int location = 0;
-    while (cin >> location) {
+    while (scanf("%llu", &location) != EOF) {
         if ((location % 3) == 0) {
-            cout << "yes" << endl;
+            printf("yes\n");
         }
         else {
             if (((location - 1) % 6) == 0) {
-                cout << "yes" << endl;
+                printf("yes\n");
             }
             else {
-                cout << "no" << endl;
+                printf("no\n");
             }
         }
     }
