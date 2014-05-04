@@ -13,48 +13,52 @@ int main()
     int nParamsRead = 0;
     int maxLen = 0;
     int curLen = 0;
+    bool valid = true;
 
     char c = ' ';
     scanf("%c", &c); // read the '\n' after the nCases
 
     for (int i = 0; i < nCases; ++i) {
         memset(charStack, '\0', sizeof(char) * MAXSTACKLEN);
-        stackIndex = 0;
-        maxLen = 0;
-        curLen = 0;
+        stackIndex = maxLen = curLen = 0;
+        valid = true;
 
         while (1) {
             nParamsRead = scanf("%c", &c);
             if (nParamsRead == EOF) {
+                if (stackIndex == 0 && curLen > maxLen) maxLen = curLen;
                 printf ("%d\n", maxLen);
                 break;
             }
-
-            //printf ("%c", c);
             if (c == '\n') { // end of test case
-                if (curLen > maxLen) maxLen = curLen;
+                if (stackIndex == 0 && curLen > maxLen) maxLen = curLen;
                 printf ("%d\n", maxLen);
                 break;
             }
-            else {
+            else if (valid == true) {
                 if (c == '>') {
-                    if (charStack[stackIndex - 1] == '<') {
+                    if (stackIndex > 0 && charStack[stackIndex - 1] == '<') {
                         curLen += 2;
+                        charStack[stackIndex - 1] = ' ';
                         --stackIndex;
-                        if (stackIndex == 0) { // don't accumulate cur len if there is nothing on stack
-                            if (curLen > maxLen) maxLen = curLen;
+                        // don't accumulate cur len if there is nothing on stack
+                        if (stackIndex == 0 && curLen > maxLen) {
+                            maxLen = curLen;
                             curLen = 0;
                         }
                     }
-                    else { //invalid combination => end of current combination
+                    else { //invalid combination => end of current combination and end of validation
                         if (curLen > maxLen) maxLen = curLen;
                         curLen = 0;
+                        valid = false;
                     }
                 }
                 else if (c == '<') {
                     charStack[stackIndex++] = c;
                 }
             }
+
+            if (valid == false) continue;
         }
     }
     return 0;
