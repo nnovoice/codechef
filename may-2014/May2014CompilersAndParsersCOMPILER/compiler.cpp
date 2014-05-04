@@ -1,6 +1,5 @@
-#include <iostream>
+#include <stdio.h>
 #include <string.h>
-using namespace std;
 
 #define MAXSTACKLEN 1000002
 char charStack[MAXSTACKLEN];
@@ -9,28 +8,32 @@ int stackIndex;
 int main()
 {
     int nCases = 0;
-    cin >> nCases;
-    cout << nCases;
+    scanf ("%d", &nCases);
 
+    int nParamsRead = 0;
     int maxLen = 0;
     int curLen = 0;
 
     char c = ' ';
-//    while (cin >> c) {
-//        cout << c;
-//    }
-//    return 0;
-    while (nCases--) {
+    scanf("%c", &c); // read the '\n' after the nCases
+
+    for (int i = 0; i < nCases; ++i) {
         memset(charStack, '\0', sizeof(char) * MAXSTACKLEN);
         stackIndex = 0;
         maxLen = 0;
         curLen = 0;
 
-        while (cin >> c) {
-            cout << c;
+        while (1) {
+            nParamsRead = scanf("%c", &c);
+            if (nParamsRead == EOF) {
+                printf ("%d\n", maxLen);
+                break;
+            }
+
+            //printf ("%c", c);
             if (c == '\n') { // end of test case
                 if (curLen > maxLen) maxLen = curLen;
-                cout << maxLen << endl;
+                printf ("%d\n", maxLen);
                 break;
             }
             else {
@@ -38,8 +41,12 @@ int main()
                     if (charStack[stackIndex - 1] == '<') {
                         curLen += 2;
                         --stackIndex;
+                        if (stackIndex == 0) { // don't accumulate cur len if there is nothing on stack
+                            if (curLen > maxLen) maxLen = curLen;
+                            curLen = 0;
+                        }
                     }
-                    else { //invalid
+                    else { //invalid combination => end of current combination
                         if (curLen > maxLen) maxLen = curLen;
                         curLen = 0;
                     }
