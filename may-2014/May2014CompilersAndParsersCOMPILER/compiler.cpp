@@ -10,9 +10,7 @@ int main()
     int nCases = 0;
     scanf ("%d", &nCases);
 
-    int nParamsRead = 0;
-    int maxLen = 0;
-    int curLen = 0;
+    int nParamsRead = 0, maxLen = 0, curLen = 0;
     bool valid = true;
 
     char c = ' ';
@@ -35,30 +33,24 @@ int main()
                 printf ("%d\n", maxLen);
                 break;
             }
-            else if (valid == true) {
-                if (c == '>') {
+            if (valid == false) continue;
+            else {
+                if (c == '<')
+                    charStack[stackIndex++] = c;
+                else { /// (c == '>')
                     if (stackIndex > 0 && charStack[stackIndex - 1] == '<') {
                         curLen += 2;
                         charStack[stackIndex - 1] = ' ';
                         --stackIndex;
-                        // don't accumulate cur len if there is nothing on stack
-                        if (stackIndex == 0 && curLen > maxLen) {
-                            maxLen = curLen;
-                            curLen = 0;
-                        }
+                        if (stackIndex == 0 && curLen > maxLen) maxLen = curLen;
                     }
-                    else { //invalid combination => end of current combination and end of validation
-                        if (curLen > maxLen) maxLen = curLen;
-                        curLen = 0;
+                    else {
+                        if (stackIndex == 0 && curLen > maxLen) maxLen = curLen;
                         valid = false;
+                        curLen = 0;
                     }
-                }
-                else if (c == '<') {
-                    charStack[stackIndex++] = c;
                 }
             }
-
-            if (valid == false) continue;
         }
     }
     return 0;
