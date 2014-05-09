@@ -12,7 +12,7 @@ void PrintMatrix(map<int, map<int, int> >& strangeMatrix, int n, int m)
             iter = strangeMatrix[i].begin();
             iter_end = strangeMatrix[i].end();
             for (;iter != iter_end; ++iter) {
-                printf("%d ", iter->second);
+                printf("%d,%d ", iter->first, iter->second);
             }
 
         }
@@ -31,26 +31,49 @@ int GetRowCost(map<int, int>& smRow, int n, int m)
     map<int, int>::iterator iter_end = smRow.end();
     int curVal = 0, curIdx = 0;
     int prevVal = 1, prevIdx = 1;
+    int nextVal = 2, nextIdx = 2;
     int cost = 0;
-    for (;iter != iter_end; ++iter) {
+
+    while (iter != iter_end) {
         curIdx = iter->first;
         curVal = iter->second;
-        if ((curIdx - prevIdx) == 1) {
-            if (curVal - prevVal < 0) {
-                    return -1;
-            }
+        //printf("ci=%d cv=%d ", curIdx, curVal);
+
+        if (((curIdx - prevIdx) == 1) && (curVal - prevVal < 0))
+            return -1;
+
+        ++iter;
+
+        if (iter != iter_end) {
+            nextIdx = iter->first;
+            nextVal = iter->second;
+        }
+        else {
+            nextIdx = curIdx + 1;
+            nextVal = nextIdx;
         }
 
-        cost += (curIdx - prevIdx) + (curVal - curIdx) - (prevVal - prevIdx);
+        //printf("ni=%d nv=%d ", nextIdx, nextVal);
+        // if the current value is more than the value at next index ( like 4, 3 )
+        if (((nextIdx - curIdx) == 1) && nextVal < curVal)
+            return - 1;
 
-        prevVal = curVal;
+        //cost += (curIdx - prevIdx) + (curVal - curIdx) - (prevVal - prevIdx);
+        cost += (curVal - prevVal); // optimized the above expression
+
         prevIdx = curIdx;
+        prevVal = curVal;
     }
+
     return cost;
 }
 
 void PrintCosts(map<int, map<int, int> >& strangeMatrix, int n, int m)
 {
+    if (n == 1 and m == 1) {
+        printf("-1\n");
+        return;
+    }
     int rowCost = 0;
     for (int i = 1; i <= n; ++i) {
         if (strangeMatrix.find(i) != strangeMatrix.end()) {
@@ -63,6 +86,7 @@ void PrintCosts(map<int, map<int, int> >& strangeMatrix, int n, int m)
     }
 }
 
+// This method builds a sparse matrix using a map of maps
 void ReadMatrix(map<int, map<int, int> >& strangeMatrix, int& n, int& m, int& p)
 {
     int row = 0, col = 0;
@@ -72,9 +96,9 @@ void ReadMatrix(map<int, map<int, int> >& strangeMatrix, int& n, int& m, int& p)
         if (strangeMatrix[row][col] == 0) {
             strangeMatrix[row][col] = col;
         }
-        printf("row=%d col=%d was %d,", row, col, strangeMatrix[row][col]);
+        //printf("row=%d col=%d was %d,", row, col, strangeMatrix[row][col]);
         strangeMatrix[row][col] += 1;
-        printf(" changed to %d\n", strangeMatrix[row][col]);
+        //printf(" changed to %d\n", strangeMatrix[row][col]);
     }
 }
 
