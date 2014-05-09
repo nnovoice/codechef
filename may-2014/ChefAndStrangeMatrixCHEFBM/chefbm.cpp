@@ -14,7 +14,6 @@ void PrintMatrix(map<int, map<int, int> >& strangeMatrix, int n, int m)
             for (;iter != iter_end; ++iter) {
                 printf("%d,%d ", iter->first, iter->second);
             }
-
         }
         else {
             for (int j = 1; j <= m; ++j) {
@@ -24,56 +23,45 @@ void PrintMatrix(map<int, map<int, int> >& strangeMatrix, int n, int m)
         printf("\n");
     }
 }
-
+// row cost if valid is always MaxVal - MinVal
 int GetRowCost(map<int, int>& smRow, int n, int m)
 {
+    if (m == 1) return -1;
+
     map<int, int>::iterator iter     = smRow.begin();
     map<int, int>::iterator iter_end = smRow.end();
-    int curVal = 0, curIdx = 0;
-    int prevVal = 1, prevIdx = 1;
-    int nextVal = 2, nextIdx = 2;
-    int cost = 0;
+    map<int, int>::reverse_iterator rev_iter;
+
+    int curIdx  = 0, curVal  = 0;
+    int prevIdx = 1, prevVal = 1;
+    int minVal  = 1, maxVal  = m;
 
     while (iter != iter_end) {
         curIdx = iter->first;
         curVal = iter->second;
-        //printf("ci=%d cv=%d ", curIdx, curVal);
 
         if (((curIdx - prevIdx) == 1) && (curVal - prevVal < 0))
             return -1;
 
-        ++iter;
-
-        if (iter != iter_end) {
-            nextIdx = iter->first;
-            nextVal = iter->second;
-        }
-        else {
-            nextIdx = curIdx + 1;
-            nextVal = nextIdx;
-        }
-
-        //printf("ni=%d nv=%d ", nextIdx, nextVal);
-        // if the current value is more than the value at next index ( like 4, 3 )
-        if (((nextIdx - curIdx) == 1) && nextVal < curVal)
-            return - 1;
-
-        //cost += (curIdx - prevIdx) + (curVal - curIdx) - (prevVal - prevIdx);
-        cost += (curVal - prevVal); // optimized the above expression
-
         prevIdx = curIdx;
         prevVal = curVal;
+
+        ++iter;
     }
 
-    return cost;
+    if ((prevIdx < m) && (prevVal > (prevIdx + 1))) return -1;
+
+    iter = smRow.begin();
+    minVal = (minVal < iter->second) ? minVal : iter->second;
+
+    rev_iter = smRow.rbegin();
+    maxVal = (maxVal > rev_iter->second) ? maxVal : rev_iter->second;
+
+    return maxVal - minVal;
 }
 
 void PrintCosts(map<int, map<int, int> >& strangeMatrix, int n, int m)
 {
-    if (n == 1 and m == 1) {
-        printf("-1\n");
-        return;
-    }
     int rowCost = 0;
     for (int i = 1; i <= n; ++i) {
         if (strangeMatrix.find(i) != strangeMatrix.end()) {
@@ -82,6 +70,7 @@ void PrintCosts(map<int, map<int, int> >& strangeMatrix, int n, int m)
         else {
             rowCost = m - 1;
         }
+        //printf("debug row=%d ", i);
         printf("%d\n", rowCost);
     }
 }
