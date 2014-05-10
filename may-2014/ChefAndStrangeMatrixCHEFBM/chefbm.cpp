@@ -26,7 +26,7 @@ void PrintMatrix(map<int, map<int, int> >& strangeMatrix, int n, int m)
 // row cost if valid is always MaxVal - MinVal
 int GetRowCost(map<int, int>& smRow, int n, int m)
 {
-    if (m == 1) return -1;
+    if (m == 1) return 0;
 
     map<int, int>::iterator iter     = smRow.begin();
     map<int, int>::iterator iter_end = smRow.end();
@@ -34,7 +34,7 @@ int GetRowCost(map<int, int>& smRow, int n, int m)
 
     int curIdx  = 0, curVal  = 0;
     int prevIdx = 1, prevVal = 1;
-    int minVal  = 1, maxVal  = m;
+    int minIdx = 1, minVal  = 1, maxVal  = m;
 
     while (iter != iter_end) {
         curIdx = iter->first;
@@ -52,7 +52,9 @@ int GetRowCost(map<int, int>& smRow, int n, int m)
     if ((prevIdx < m) && (prevVal > (prevIdx + 1))) return -1;
 
     iter = smRow.begin();
-    minVal = (minVal < iter->second) ? minVal : iter->second;
+    if (minVal < iter->second) {
+        if (minIdx == iter->first) minVal = iter->second;
+    }
 
     rev_iter = smRow.rbegin();
     maxVal = (maxVal > rev_iter->second) ? maxVal : rev_iter->second;
