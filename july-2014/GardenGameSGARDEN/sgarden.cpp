@@ -51,7 +51,7 @@ ULL GetNumWhistles(int nBandits)
 		cycles[cycleIndex++] = cycleLen;
 	}
 
-	//ULL result = std::accumulate(cycles, cycles + cycleIndex, 1, lcm);
+	//ULL result = std::accumulate(cycles, cycles + cycleIndex, 1, lcm);;
 	ULL result = cycles[0];
 	for (int i = 1; i < cycleIndex; ++i) {
 		if (cycles[i] != 1) {
