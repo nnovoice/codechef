@@ -42,6 +42,8 @@ int GetRowCost(map<int, int>& smRow, int n, int m)
 
         if (((curIdx - prevIdx) == 1) && (curVal - prevVal < 0))
             return -1;
+        else if (prevVal > (prevIdx + 1))
+            return -1;
 
         prevIdx = curIdx;
         prevVal = curVal;

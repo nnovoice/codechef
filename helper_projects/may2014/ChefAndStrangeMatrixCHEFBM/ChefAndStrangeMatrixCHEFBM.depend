@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1399649060 source:c:\data\personal\programming\codechef\helper_projects\may2014\chefandstrangematrixchefbm\chefbm.cpp
+	<stdlib.h>
+	<iostream>
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="may-2014/May2014CompilersAndParsersCOMPILER/May2014CompilersAndParsersCOMPILER.cbp" />
+		<Project filename="may-2014/May2014StoneRRSTONE/May2014StoneRRSTONE.cbp" />
+		<Project filename="may-2014/ChefJumpingOJUMPS/ChefJumpingOJUMPS.cbp" />
+		<Project filename="may-2014/ChefAndStrangeMatrixCHEFBM/ChefAndStrangeMatrixCHEFBM.cbp" />
+		<Project filename="helper_projects/may2014/ChefAndStrangeMatrixCHEFBM/ChefAndStrangeMatrixCHEFBM.cbp" />
+		<Project filename="../info-retrieval/BoostTrial/BoostTrial.cbp" />
+		<Project filename="june-2014/ChefAndSubarray/ChefAndSubarray.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

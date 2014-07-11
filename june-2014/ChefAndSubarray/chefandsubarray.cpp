@@ -1,19 +1,18 @@
 #include <stdio.h>
-const int MAXNUMBERS = 100000;
 
 int main()
 {
     int nNumbers = 0;
-    int numbers[MAXNUMBERS] = {0};
+    int number = 0;
     int max_len = 0, cur_len = 0;
 
     scanf("%d", &nNumbers);
     //printf("Debug: %d\n", nNumbers);
 
     for (int i = 0; i < nNumbers; ++i) {
-        scanf("%d", &numbers[i]);
+        scanf("%d", &number);
         //printf("Debug: %d\n", numbers[i]);
-        if (numbers[i] > 0){
+        if (number > 0){
             ++cur_len;
             if (cur_len > max_len)
                 max_len = cur_len;
