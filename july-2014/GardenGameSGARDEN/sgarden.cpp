@@ -61,9 +61,9 @@ ULL GetNumWhistles(int nBandits)
 	//printf("Debug: result= %d", result);
 
 	//printf("Debug:\n");
-	for (int i = 0; i <= cycleIndex; ++i) {
+	//for (int i = 0; i <= cycleIndex; ++i) {
 		//printf("D:%d ", cycles[i]);
-	}
+	//}
 	//printf("Debug end.\n");
 	return result;
 }
