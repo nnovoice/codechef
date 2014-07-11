@@ -11,10 +11,6 @@ int positions[MAX_POSITIONS];
 bool visited[MAX_POSITIONS];
 int cycles[MAX_POSITIONS];
 
-// TBD: check for overflows
-// TBD: test with more inputs
-// TBD: test with producing random long permutations
-
 ULL gcd(ULL a, ULL b)
 {
     for (;;)
@@ -55,16 +51,15 @@ ULL GetNumWhistles(int nBandits)
 		cycles[cycleIndex++] = cycleLen;
 	}
 
-	ULL result = std::accumulate(cycles, cycles + cycleIndex, 1, lcm);
+	//ULL result = std::accumulate(cycles, cycles + cycleIndex, 1, lcm);
+	ULL result = cycles[0];
+	for (int i = 1; i < cycleIndex; ++i) {
+		if (cycles[i] != 1) {
+			result = lcm(result, cycles[i]);
+		}
+	}
 	result = result % MOD_NUM;
 
-	//printf("Debug: result= %d", result);
-
-	//printf("Debug:\n");
-	//for (int i = 0; i <= cycleIndex; ++i) {
-		//printf("D:%d ", cycles[i]);
-	//}
-	//printf("Debug end.\n");
 	return result;
 }
 
@@ -72,18 +67,13 @@ int main()
 {
 	int nCases = 0;
 	scanf ("%d", &nCases);
-	//printf("Debug cases= %d\n", nCases);
 	int nBandits = 0;
 
 	for (int caseNum = 0; caseNum < nCases; ++caseNum) {
 		scanf("%d", &nBandits);
-		//printf("Debug num bandits= %d", nBandits);
-
-		//printf("Debug bandit positions= ");
 		// start index at 1...to be in sync with the problem
 		for (int i = 1; i <= nBandits; ++i) {
 			scanf("%d", &positions[i]);
-			//printf("D: %d ", positions[i]);
 
 			visited[i] = false;
 		}
