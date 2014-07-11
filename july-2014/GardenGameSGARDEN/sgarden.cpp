@@ -1,8 +1,8 @@
 // http://www.codechef.com/JULY14/problems/SGARDEN
 #include <stdio.h>
-#include <numeric>
+//#include <numeric>
 
-typedef unsigned long long ULL;
+typedef unsigned long long int ULLI;
 
 const int MOD_NUM = 1000000007;
 const int MAX_POSITIONS = 100001;
@@ -10,8 +10,9 @@ const int MAX_POSITIONS = 100001;
 int positions[MAX_POSITIONS];
 bool visited[MAX_POSITIONS];
 int cycles[MAX_POSITIONS];
+//ULLI results[MAX_POSITIONS];
 
-ULL gcd(ULL a, ULL b)
+ULLI gcd(ULLI a, ULLI b)
 {
     for (;;)
     {
@@ -22,18 +23,22 @@ ULL gcd(ULL a, ULL b)
     }
 }
 
-ULL lcm(ULL a, ULL b)
+ULLI lcm(ULLI a, ULLI b)
 {
-	ULL temp = gcd(a, b);
+	ULLI temp = gcd(a, b);
+
+	ULLI LCM = temp ? (a / temp * b) : 0;
+	////printf("Debug: GCD of %llu, %llu is: %llu and LCM is: %llu\n", a, b, temp, LCM);
 
     return temp ? (a / temp * b) : 0;
 }
 
-ULL GetNumWhistles(int nBandits)
+ULLI GetNumWhistles(int nBandits)
 {
 	int cycleIndex = 0;
 	int cycleLen = 0;
 	int j = 0;
+	ULLI curLCM = 0;
 	for (int i = 1; i <= nBandits; ++i) {
 		visited[i] = true;
 
@@ -51,14 +56,26 @@ ULL GetNumWhistles(int nBandits)
 		cycles[cycleIndex++] = cycleLen;
 	}
 
-	//ULL result = std::accumulate(cycles, cycles + cycleIndex, 1, lcm);;
-	ULL result = cycles[0];
+	//ULLI result = std::accumulate(cycles, cycles + cycleIndex, 1, lcm);;
+	ULLI result = cycles[0] % MOD_NUM;
+	int idx = 0;
 	for (int i = 1; i < cycleIndex; ++i) {
 		if (cycles[i] != 1) {
-			result = lcm(result, cycles[i]);
+			curLCM = lcm(result, cycles[i]) % MOD_NUM;
+			//printf("Debug: LCM of %llu %d is %llu\n", result, cycles[i], curLCM);
+			result = curLCM;
+			//results[idx++] = result;
 		}
 	}
 	result = result % MOD_NUM;
+
+//	for(int i = 0; i < idx; ++i) {
+		//printf("D: %llu ", results[i]);
+//		if (i > 0 && i < idx && results[i] > results[i+1]) {
+//			printf("ERROR...OVERFLOW ");
+//		}
+//	}
+//	printf("Debug: \n");
 
 	return result;
 }
