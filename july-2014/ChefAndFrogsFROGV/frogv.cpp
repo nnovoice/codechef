@@ -55,7 +55,8 @@ int main()
 		sortedPositions[i] = positions[i];
 	}
 
-	std::sort(sortedPositions, sortedPositions + n);
+	// off by one error if we use std::sort(sortedPositions, sortedPositions + n);
+	std::sort(sortedPositions, sortedPositions + n + 1);
 
 	for (int i = 0; i < p; ++i) {
 		scanf("%d %d", &frog1Idx, &frog2Idx);
