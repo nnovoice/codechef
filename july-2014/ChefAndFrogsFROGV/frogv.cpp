@@ -1,57 +1,88 @@
 // http://www.codechef.com/JULY14/problems/FROGV
 #include <stdio.h>
+#include <iostream>
+#include <map>
 #include <algorithm>
+using namespace std;
 
 const int MAX_POSITIONS = 100001;
 
 int positions[MAX_POSITIONS];
-int sortedPositions[MAX_POSITIONS];
+//int sortedPositions[MAX_POSITIONS];
+map<int, int> sortedPositions;
 
-int GetIndexFromSortedPositions(int frogIdx, int start, int end)
-{
-	int pos = positions[frogIdx]; // the actual position as received in the input
-	//printf("Debug: frogIdx= %d and frogPos= %d\n", frogIdx, pos);
-	int mid = 0;
-	while (start <= end) {
-		mid = start + (end - start) / 2;
-		if (sortedPositions[mid] > pos) {
-			end = mid - 1;
-		}
-		else if (sortedPositions[mid] < pos) {
-			start = mid + 1;
-		}
-		else {
-			break;
-		}
-	}
-	return mid;
-}
+
+//int GetIndexFromSortedPositions(int frogIdx, int start, int end)
+//{
+//	int pos = positions[frogIdx]; // the actual position as received in the input
+//	//printf("Debug: frogIdx= %d and frogPos= %d\n", frogIdx, pos);
+//	int mid = 0;
+//	while (start <= end) {
+//		mid = start + (end - start) / 2;
+//		if (sortedPositions[mid] > pos) {
+//			end = mid - 1;
+//		}
+//		else if (sortedPositions[mid] < pos) {
+//			start = mid + 1;
+//		}
+//		else {
+//			break;
+//		}
+//	}
+//	return mid;
+//}
+//
+//bool CanFrogsCommunicate(int frog1Idx, int frog2Idx, int n, int k)
+//{
+//	bool canCommunicate = false;
+//	int frog1SortedIdx = GetIndexFromSortedPositions(frog1Idx, 1, n);
+//	int frog2SortedIdx = GetIndexFromSortedPositions(frog2Idx, 1, n);
+//	//printf("Debug: frog1SortedIdx= %d and frog2SortedIdx= %d\n", frog1SortedIdx, frog2SortedIdx);
+//	if (frog1SortedIdx == frog2SortedIdx) {
+//	    return true;
+//	}
+//	if (frog1SortedIdx > frog2SortedIdx) {
+//	    std::swap(frog1SortedIdx, frog2SortedIdx);
+//	}
+//	//printf("Debug: After swap, frog1SortedIdx= %d and frog2SortedIdx= %d\n", frog1SortedIdx, frog2SortedIdx);
+//	// We care comparing data at i+1 with data at i, so, i < frog2SortedIdx; is correct below.
+//	for (int i = frog1SortedIdx; i < frog2SortedIdx; ++i) {
+//		//printf("Debug: k= %d pos(i+1)= %d and pos(i)= %d diff= %d\n", k, sortedPositions[i + 1], sortedPositions[i], (sortedPositions[i + 1] - sortedPositions[i]));
+//		if ((sortedPositions[i + 1] - sortedPositions[i]) > k) {
+//			canCommunicate = false;
+//			break;
+//		}
+//		else {
+//		  canCommunicate = true;
+//		}
+//	}
+//	return canCommunicate;
+//}
 
 bool CanFrogsCommunicate(int frog1Idx, int frog2Idx, int n, int k)
 {
-	bool canCommunicate = false;
-	int frog1SortedIdx = GetIndexFromSortedPositions(frog1Idx, 1, n);
-	int frog2SortedIdx = GetIndexFromSortedPositions(frog2Idx, 1, n);
-	//printf("Debug: frog1SortedIdx= %d and frog2SortedIdx= %d\n", frog1SortedIdx, frog2SortedIdx);
-	if (frog1SortedIdx == frog2SortedIdx) {
-	    return true;
+	map<int, int>::iterator iter1, iter2, prevIter;
+
+	if (positions[frog1Idx] == positions[frog2Idx])
+		return true;
+
+	if (positions[frog1Idx] > positions[frog2Idx]) {
+		iter2 = sortedPositions.find(positions[frog1Idx]);
+		iter1 = sortedPositions.find(positions[frog2Idx]);
 	}
-	if (frog1SortedIdx > frog2SortedIdx) {
-	    std::swap(frog1SortedIdx, frog2SortedIdx);
+	else {
+		iter2 = sortedPositions.find(positions[frog2Idx]);
+		iter1 = sortedPositions.find(positions[frog1Idx]);
 	}
-	//printf("Debug: After swap, frog1SortedIdx= %d and frog2SortedIdx= %d\n", frog1SortedIdx, frog2SortedIdx);
-	// We care comparing data at i+1 with data at i, so, i < frog2SortedIdx; is correct below.
-	for (int i = frog1SortedIdx; i < frog2SortedIdx; ++i) {
-		//printf("Debug: k= %d pos(i+1)= %d and pos(i)= %d diff= %d\n", k, sortedPositions[i + 1], sortedPositions[i], (sortedPositions[i + 1] - sortedPositions[i]));
-		if ((sortedPositions[i + 1] - sortedPositions[i]) > k) {
-			canCommunicate = false;
-			break;
-		}
-		else {
-		  canCommunicate = true;
-		}
+
+	while (iter1 != iter2) {
+		prevIter = iter1;
+		++iter1;
+		//cout << iter1->first << " " << prevIter->first << " "<< (iter1->first - prevIter->first) << endl;
+		if ((iter1->first - prevIter->first) > k)
+			return false;
 	}
-	return canCommunicate;
+	return true;
 }
 
 int main()
@@ -66,11 +97,11 @@ int main()
 	for (int i = 1; i <= n; ++i) {
 		scanf("%d", &positions[i]);
 		//printf("D:(%d,%d) ", i, positions[i]);
-		sortedPositions[i] = positions[i];
+		sortedPositions[positions[i]] += 1;
 	}
 
 	// off by one error if we use std::sort(sortedPositions, sortedPositions + n);
-	std::sort(sortedPositions, sortedPositions + n + 1);
+	//std::sort(sortedPositions, sortedPositions + n + 1);
 
 	for (int i = 0; i < p; ++i) {
 		if (scanf("%d %d", &frog1Idx, &frog2Idx) == -1)
