@@ -41,15 +41,17 @@ bool CanFrogsCommunicate(int frog1Idx, int frog2Idx, int n, int k)
 	}
 	//printf("Debug: After swap, frog1SortedIdx= %d and frog2SortedIdx= %d\n", frog1SortedIdx, frog2SortedIdx);
 	// We care comparing data at i+1 with data at i, so, i < frog2SortedIdx; is correct below.
+	canCommunicate = true;
 	for (int i = frog1SortedIdx; i < frog2SortedIdx; ++i) {
 		//printf("Debug: k= %d pos(i+1)= %d and pos(i)= %d diff= %d\n", k, sortedPositions[i + 1], sortedPositions[i], (sortedPositions[i + 1] - sortedPositions[i]));
 		if ((sortedPositions[i + 1] - sortedPositions[i]) > k) {
-			canCommunicate = false;
-			break;
+			return false;
+			//canCommunicate = false;
+			//break;
 		}
-		else {
-		  canCommunicate = true;
-		}
+//		else {
+//		  canCommunicate = true;
+//		}
 	}
 	return canCommunicate;
 }
