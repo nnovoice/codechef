@@ -5,50 +5,37 @@
 
 using namespace std;
 
-void PrintGraph(map<int, vector<int> >& graph)
+void PrintGraph(map<int, vector<int> >& graph, int nVerts, int mEdges)
 {
-	size_t n = graph.size();
-	for (size_t i = 1; i <= n; ++i) {
-		nodes = graph[i];
-		cout << "Size of nodes(" << i << ") is= " << nodes.size() << ": nodes are: ";
-		for (size_t j = 0; j < nodes.size(); ++j)
-			cout << nodes[j] << " ";
+	for (int i = 1; i <= nVerts; ++i) {
+		cout << "Size of nodes(" << i << ") is= " << graph[i].size() << ": nodes are: ";
+		for (size_t j = 0; j < graph[i].size(); ++j)
+			cout << graph[i][j] << " ";
 		cout << endl;
 	}
+	cout << endl;
 }
 
 int main()
 {
-	map<int, vector<int> > graph;
+	map<int, vector<int> > directedGraph;
+	map<int, vector<int> > undirectedGraph;
+	
 	int node1 = 0, node2 = 0;
 	int nVerts = 0, mEdges = 0;
-	cint >> nVerts >> mEdges;
+	
+	cin >> nVerts >> mEdges;
 
 	for (int i = 0; i < mEdges; ++i) {
 		cin >> node1 >> node2;
-		graph[node1].push_back(node2);
+		directedGraph[node1].push_back(node2);
+		
+		undirectedGraph[node1].push_back(node2);
+		undirectedGraph[node2].push_back(node1);
 	}
+	
+	PrintGraph(directedGraph, nVerts, mEdges);
+	PrintGraph(undirectedGraph, nVerts, mEdges);
 
-	return 0;
-}
-
-int main0()
-{
-	map<int, vector<int> > graph;
-
-	vector<int> nodes;
-	nodes.push_back(2);
-	graph[1].push_back(3);
-	graph[2].push_back(4);
-	graph[2].push_back(5);
-	graph[3].push_back(3);
-
-	for (int i = 1; i < 5; ++i) {
-		nodes = graph[i];
-		cout << "Size of nodes(" << i << ") is= " << nodes.size() << ": nodes are: ";
-		for (size_t j = 0; j < nodes.size(); ++j)
-			cout << nodes[j] << " ";
-		cout << endl;
-	}
 	return 0;
 }
