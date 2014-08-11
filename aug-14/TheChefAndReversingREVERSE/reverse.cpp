@@ -1,110 +1,66 @@
-#include <stdlib.h>
-#include <limits.h>
-#include <string.h>
-#include <iostream>
+#include <cstdio>
 #include <vector>
-#include <map>
-
+#include <queue>
 using namespace std;
 
-const int MAX_VERTICES = 100001;
-int vStack[MAX_VERTICES];
-int pred[MAX_VERTICES];
-int costs[MAX_VERTICES];
-bool visited[MAX_VERTICES];
-int idx;
+typedef pair<int, int> ii;
+typedef vector<int> vi;
+typedef vector<ii> vii;
+#define INF 1000000000
 
-void PrintGraph(map<int, map<int, int> >& graph, int nVerts, int mEdges)
+void PrintGraph(vector<vii>& adjList, int nVerts, int mEdges)
 {
-	map<int, int>::iterator iter, iter_end;
-	for (int i = 1; i <= nVerts; ++i) {
-		cout << "Size of nodes(" << i << ") is= " << graph[i].size() << ": nodes are: ";
-		iter = graph[i].begin();
-		iter_end = graph[i].end();
-		for (; iter != iter_end; ++iter)
-			cout << iter->first << "," << iter->second << " ";
-		cout << endl;
-	}
-	cout << endl;
-}
-
-void DijkstraShortestPath(map<int, map<int, int> >& graph, int startVert, int endVert)
-{
-
-}
-
-int BFS(map<int, map<int, int> >& graph, int sourceVert, int targetVert, int nVerts, int mEdges)
-{
-	bool reachedDestination =  false;
-	map<int, int>::iterator iter, iter_end;
-	int minEdgesReversed = INT_MAX;
-	int curMinEdgesReversed = 0;
-	
-	memset(visited, false, (nVerts + 1) * sizeof(bool));
-	int curVert = sourceVert;
-	vStack[idx++] = sourceVert;
-	pred[sourceVert] = sourceVert;
-	costs[sourceVert] = 0;
-
-	while(idx != 0) {
-		curVert = vStack[--idx]; 
-		if (curVert == targetVert) {
-			reachedDestination = true;
-			cout << "reached destination: cur min edges= " << curMinEdgesReversed << endl;
-			if (curMinEdgesReversed < minEdgesReversed) {
-				minEdgesReversed = curMinEdgesReversed;
-				curMinEdgesReversed = 0;
-			}
+	printf("Printing Graph:\n");
+	for (int i = 1; i < adjList.size(); ++i) {
+		printf("Edges for %d= ", i);
+		for (int j = 0; j < adjList[i].size(); ++j) {
+			printf("%d,%d ", adjList[i][j].first, adjList[i][j].second);
 		}
-
-		if (visited[curVert] == true) continue;
-		cout << curVert << " ";
-		visited[curVert] = true;
-		
-		if (graph[pred[curVert]][curVert] == 2)  {
-			curMinEdgesReversed = costs[pred[curVert]] + 1;
-			costs[curVert] = curMinEdgesReversed;
-		}
-
-		iter = graph[curVert].begin();
-		iter_end = graph[curVert].end();
-		for (; iter != iter_end; ++iter) {
-			vStack[idx++] = iter->first;
-			pred[iter->first] = curVert;
-		}
+		printf("\n");
 	}
-	
-	return (reachedDestination == true) ? minEdgesReversed : -1;
 }
 
-int main()
-{
-	map<int, map<int, int> > directedGraph;
-	map<int, map<int, int> > undirectedGraph;
+int main() {
+  int V, E, s, u, v, w;
+  vector<vii> AdjList;
 
-	int node1 = 0, node2 = 0;
-	int nVerts = 0, mEdges = 0;
+  scanf("%d %d", &V, &E);
+  //printf("%d %d\n", V, E);
+  s = 1; // source
 
-	cin >> nVerts >> mEdges;
+  AdjList.assign(V + 1, vii()); // assign blank vectors of pair<int, int>s to AdjList
+  //printf("size of adj list=%u\n", AdjList.size());
+  for (int i = 1; i <= E; ++i) {
+    scanf("%d %d", &u, &v);
+    //printf("%d %d\n", u, v);
+    //w = 1;
+    AdjList[u].push_back(ii(v, 0));                              // directed graph
+    AdjList[v].push_back(ii(u, 2));
+  }
+  
+  //PrintGraph(AdjList, V, E);  
 
-	for (int i = 0; i < mEdges; ++i) {
-		cin >> node1 >> node2;
-		if (node1 == node2) continue; // ignore loops
+  // Dijkstra routine
+  vi dist(V + 1, INF); dist[s] = 0;                    // INF = 1B to avoid overflow
+  priority_queue< ii, vector<ii>, greater<ii> > pq; 
+  pq.push(ii(0, s));
+                             // ^to sort the pairs by increasing distance from s
+  while (!pq.empty()) {                                             // main loop
+    ii front = pq.top(); pq.pop();     // greedy: pick shortest unvisited vertex
+    int d = front.first, u = front.second;
+    if (d > dist[u]) continue;   // this check is important, see the explanation
+    for (int j = 0; j < (int)AdjList[u].size(); j++) {
+      ii v = AdjList[u][j];                       // all outgoing edges from u
+      if (dist[u] + v.second < dist[v.first]) {
+        dist[v.first] = dist[u] + v.second;                 // relax operation
+        pq.push(ii(dist[v.first], v.first));
+  } } }  // note: this variant can cause duplicate items in the priority queue
 
-		directedGraph[node1][node2] = 1;
+  //for (int i = 1; i <= V; ++i) // index + 1 for final answer
+  //  printf("SSSP(%d, %d) = %d\n", s, i, dist[i]);
+  
+  printf("%d\n", dist[V] / 2);
 
-		undirectedGraph[node1][node2] = 1;
-		if (undirectedGraph[node2][node1] == 0)
-			undirectedGraph[node2][node1] = 2;
-	}
-
-	PrintGraph(directedGraph, nVerts, mEdges);
-	cout << "Debug: " << "performing BFS on directed graph:\n";
-	cout << "Debug: min edges reversed= " << BFS(directedGraph, 1, nVerts, nVerts, mEdges) << endl;
-
-	PrintGraph(undirectedGraph, nVerts, mEdges);
-	cout << "Debug: " << "performing BFS on undirected graph:\n";
-	cout << "Debug: min edges reversed= " << BFS(undirectedGraph, 1, nVerts, nVerts, mEdges) << endl;
-
-	return 0;
+  return 0;
 }
+
