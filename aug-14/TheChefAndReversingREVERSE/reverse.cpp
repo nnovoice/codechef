@@ -6,7 +6,7 @@ using namespace std;
 typedef pair<int, int> ii;
 typedef vector<int> vi;
 typedef vector<ii> vii;
-#define INF 1000000000
+#define NOT_EXISTS -1
 
 void PrintGraph(vector<vii>& adjList, int nVerts, int mEdges)
 {
@@ -34,14 +34,15 @@ int main() {
     scanf("%d %d", &u, &v);
     //printf("%d %d\n", u, v);
     //w = 1;
+    if (u == v) continue;
     AdjList[u].push_back(ii(v, 0));                              // directed graph
-    AdjList[v].push_back(ii(u, 2));
+    AdjList[v].push_back(ii(u, 1));
   }
   
   //PrintGraph(AdjList, V, E);  
 
   // Dijkstra routine
-  vi dist(V + 1, INF); dist[s] = 0;                    // INF = 1B to avoid overflow
+  vi dist(V + 1, NOT_EXISTS); dist[s] = 0;                    // INF = 1B to avoid overflow
   priority_queue< ii, vector<ii>, greater<ii> > pq; 
   pq.push(ii(0, s));
                              // ^to sort the pairs by increasing distance from s
@@ -59,7 +60,7 @@ int main() {
   //for (int i = 1; i <= V; ++i) // index + 1 for final answer
   //  printf("SSSP(%d, %d) = %d\n", s, i, dist[i]);
   
-  printf("%d\n", dist[V] / 2);
+  printf("%d\n", dist[V]);
 
   return 0;
 }
