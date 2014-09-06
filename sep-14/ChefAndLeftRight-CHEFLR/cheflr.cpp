@@ -5,8 +5,7 @@ const ULLI MODNUM = 1000000007;
 
 int main()
 {
-	int nCases = 0;
-	int level = 1;
+	int nCases = 0, level = 1;
 	ULLI num = 1, temp = 1;
 	char c = ' ';
 	scanf("%d", &nCases);
@@ -19,7 +18,7 @@ int main()
 		
 		while(scanf("%c", &c) != EOF) {
 			if (c == '\n') break;
-			temp = 2 * num;
+			temp = num * 2;
 			num = (temp < MODNUM) ? temp : (temp % MODNUM); 
 			
 			// odd level? L = 2 * num; R = 2 * num + 2;
@@ -30,13 +29,11 @@ int main()
 			}
 			else {
 				// even level: L = 2 * num - 1; R = 2 * num + 1;
-				if (c == 'l')
-					num = (num - 1) % MODNUM;
-				else
-					num = (num + 1) % MODNUM;
+				num = (c == 'l') ? ((num - 1) % MODNUM) : ((num + 1) % MODNUM);
 			}
+			//printf("Debug c=%c temp=%llu num=%llu\n", c, temp, num);
+			
 			++level;
-			//printf("Debug c=%c num=%llu ", c, num);
 		}
 		printf("%llu\n", num);
 	}
