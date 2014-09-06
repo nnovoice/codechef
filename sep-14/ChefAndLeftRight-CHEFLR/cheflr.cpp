@@ -8,7 +8,7 @@ int main()
 	int nCases = 0;
 	int level = 1;
 	ULLI num = 1, temp = 1;
-	int c = ' ';
+	char c = ' ';
 	scanf("%d", &nCases);
 	scanf("%c", &c); // read the '\n'
 	
