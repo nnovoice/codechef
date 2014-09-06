@@ -1,0 +1,1117 @@
+top=1,1
+top=1,3
+top=1,8
+top=1,9
+top=1,10
+top=1,15
+top=1,26
+top=1,30
+top=1,32
+top=1,37
+top=1,38
+top=1,39
+top=1,47
+top=1,50
+top=1,51
+top=1,53
+top=1,58
+top=1,59
+top=1,61
+top=1,67
+top=1,70
+top=1,71
+top=1,73
+top=1,75
+top=1,76
+top=1,77
+top=1,78
+top=1,83
+top=1,86
+top=1,87
+top=1,91
+top=1,92
+top=1,94
+top=1,98
+top=1,100
+top=1,102
+top=1,107
+top=1,110
+top=1,111
+top=1,112
+top=1,117
+top=1,120
+top=1,122
+top=1,123
+top=1,127
+top=1,128
+top=1,129
+top=1,133
+top=1,136
+top=1,139
+top=1,140
+top=1,147
+top=1,149
+top=1,156
+top=1,157
+top=1,158
+top=1,160
+top=1,162
+top=1,163
+top=1,167
+top=1,169
+top=1,170
+top=1,175
+top=1,177
+top=1,178
+top=1,180
+top=1,181
+top=1,183
+top=1,186
+top=1,187
+top=1,194
+top=1,196
+top=1,202
+top=1,204
+top=1,205
+top=1,206
+top=1,207
+top=1,208
+top=1,209
+top=1,211
+top=1,212
+top=1,216
+top=1,217
+top=1,219
+top=1,221
+top=1,223
+top=1,224
+top=1,226
+top=1,230
+top=1,234
+top=1,238
+top=1,240
+top=1,242
+top=1,243
+top=1,248
+top=1,250
+top=1,254
+top=1,258
+top=1,259
+top=1,262
+top=1,263
+top=1,264
+top=1,265
+top=1,267
+top=1,271
+top=1,272
+top=1,275
+top=1,276
+top=1,279
+top=1,280
+top=1,283
+top=1,286
+top=1,287
+top=1,291
+top=1,292
+top=1,294
+top=1,295
+top=1,296
+top=1,300
+top=1,302
+top=1,305
+top=1,306
+top=1,308
+top=1,309
+top=1,310
+top=1,312
+top=1,315
+top=1,316
+top=1,319
+top=1,322
+top=1,323
+top=1,324
+top=1,329
+top=1,331
+top=1,332
+top=1,334
+top=1,336
+top=1,338
+top=1,342
+top=1,343
+top=1,344
+top=1,348
+top=1,355
+top=1,360
+top=1,367
+top=1,368
+top=1,370
+top=1,371
+top=1,372
+top=1,373
+top=1,375
+top=1,377
+top=1,379
+top=1,384
+top=1,386
+top=1,392
+top=1,394
+top=2,14
+top=2,17
+top=2,19
+top=2,24
+top=2,25
+top=2,28
+top=2,34
+top=2,40
+top=2,42
+top=2,45
+top=2,60
+top=2,65
+top=2,69
+top=2,74
+top=2,84
+top=2,85
+top=2,89
+top=2,106
+top=2,113
+top=2,124
+top=2,135
+top=2,138
+top=2,143
+top=2,145
+top=2,151
+top=2,155
+top=2,159
+top=2,189
+top=2,190
+top=2,191
+top=2,197
+top=2,201
+top=2,210
+top=2,218
+top=2,225
+top=2,227
+top=2,231
+top=2,233
+top=2,235
+top=2,236
+top=2,237
+top=2,241
+top=2,245
+top=2,247
+top=2,252
+top=2,270
+top=2,273
+top=2,282
+top=2,298
+top=2,303
+top=2,307
+top=2,311
+top=2,317
+top=2,335
+top=2,346
+top=2,349
+top=2,351
+top=2,356
+top=2,362
+top=2,363
+top=2,369
+top=2,374
+top=2,378
+top=2,383
+top=2,388
+top=2,397
+top=2,400
+top=3,22
+top=3,23
+top=3,54
+top=3,68
+top=3,82
+top=3,101
+top=3,115
+top=3,119
+top=3,125
+top=3,130
+top=3,142
+top=3,150
+top=3,154
+top=3,203
+top=3,222
+top=3,249
+top=3,288
+top=3,289
+top=3,304
+top=3,313
+top=3,314
+top=3,330
+top=3,339
+top=3,357
+top=3,358
+top=3,359
+top=3,387
+top=3,390
+top=3,396
+top=4,146
+top=4,192
+top=4,399
+top=5,56
+top=5,293
+Debug: processing request for a table by: 42
+Debug: allotted table for 42
+Debug: processing request for a table by: 68
+Debug: allotted table for 68
+Debug: processing request for a table by: 335
+Debug: allotted table for 335
+Debug: processing request for a table by: 101
+Debug: allotted table for 101
+Debug: processing request for a table by: 370
+Debug: allotted table for 370
+Debug: processing request for a table by: 125
+Debug: allotted table for 125
+Debug: processing request for a table by: 279
+Debug: allotted table for 279
+Debug: processing request for a table by: 159
+Debug: allotted table for 159
+Debug: processing request for a table by: 163
+Debug: allotted table for 163
+Debug: processing request for a table by: 65
+Debug: allotted table for 65
+Debug: processing request for a table by: 106
+Debug: allotted table for 106
+Debug: processing request for a table by: 146
+Debug: allotted table for 146
+Debug: processing request for a table by: 82
+Debug: allotted table for 82
+Debug: processing request for a table by: 28
+Debug: allotted table for 28
+Debug: processing request for a table by: 362
+Debug: allotted table for 362
+Debug: processing request for a table by: 92
+Debug: allotted table for 92
+Debug: processing request for a table by: 196
+Debug: allotted table for 196
+Debug: processing request for a table by: 343
+Debug: allotted table for 343
+Debug: processing request for a table by: 28
+Debug: 28 already has a table.
+Debug: processing request for a table by: 237
+Debug: allotted table for 237
+Debug: processing request for a table by: 392
+Debug: allotted table for 392
+Debug: processing request for a table by: 205
+Debug: allotted table for 205
+Debug: processing request for a table by: 303
+Debug: allotted table for 303
+Debug: processing request for a table by: 154
+Debug: allotted table for 154
+Debug: processing request for a table by: 293
+Debug: allotted table for 293
+Debug: processing request for a table by: 383
+Debug: allotted table for 383
+Debug: processing request for a table by: 222
+Debug: allotted table for 222
+Debug: processing request for a table by: 317
+Debug: allotted table for 317
+Debug: processing request for a table by: 119
+Debug: allotted table for 119
+Debug: processing request for a table by: 296
+Debug: allotted table for 296
+Debug: processing request for a table by: 248
+Debug: allotted table for 248
+Debug: processing request for a table by: 127
+Debug: allotted table for 127
+Debug: processing request for a table by: 372
+Debug: allotted table for 372
+Debug: processing request for a table by: 339
+Debug: allotted table for 339
+Debug: processing request for a table by: 270
+Debug: allotted table for 270
+Debug: processing request for a table by: 313
+Debug: allotted table for 313
+Debug: processing request for a table by: 68
+Debug: 68 already has a table.
+Debug: processing request for a table by: 300
+Debug: allotted table for 300
+Debug: processing request for a table by: 236
+Debug: allotted table for 236
+Debug: processing request for a table by: 295
+Debug: allotted table for 295
+Debug: processing request for a table by: 304
+Debug: allotted table for 304
+Debug: processing request for a table by: 212
+Debug: allotted table for 212
+Debug: processing request for a table by: 123
+Debug: allotted table for 123
+Debug: processing request for a table by: 334
+Debug: allotted table for 334
+Debug: processing request for a table by: 74
+Debug: allotted table for 74
+Debug: processing request for a table by: 265
+Debug: allotted table for 265
+Debug: processing request for a table by: 342
+Debug: allotted table for 342
+Debug: processing request for a table by: 112
+Debug: allotted table for 112
+Debug: processing request for a table by: 254
+Debug: allotted table for 254
+Debug: processing request for a table by: 69
+Debug: allotted table for 69
+Debug: processing request for a table by: 348
+Debug: allotted table for 348
+Debug: processing request for a table by: 45
+Debug: allotted table for 45
+Debug: processing request for a table by: 263
+Debug: allotted table for 263
+Debug: processing request for a table by: 358
+Debug: allotted table for 358
+Debug: processing request for a table by: 38
+Debug: allotted table for 38
+Debug: processing request for a table by: 60
+Debug: allotted table for 60
+Debug: processing request for a table by: 324
+Debug: allotted table for 324
+Debug: processing request for a table by: 142
+Debug: allotted table for 142
+Debug: processing request for a table by: 330
+Debug: allotted table for 330
+Debug: processing request for a table by: 379
+Debug: allotted table for 379
+Debug: processing request for a table by: 317
+Debug: 317 already has a table.
+Debug: processing request for a table by: 236
+Debug: 236 already has a table.
+Debug: processing request for a table by: 191
+Debug: allotted table for 191
+Debug: processing request for a table by: 243
+Debug: allotted table for 243
+Debug: processing request for a table by: 289
+Debug: allotted table for 289
+Debug: processing request for a table by: 107
+Debug: allotted table for 107
+Debug: processing request for a table by: 241
+Debug: allotted table for 241
+Debug: processing request for a table by: 143
+Debug: allotted table for 143
+Debug: processing request for a table by: 65
+Debug: 65 already has a table.
+Debug: processing request for a table by: 249
+Debug: allotted table for 249
+Debug: processing request for a table by: 247
+Debug: allotted table for 247
+Debug: processing request for a table by: 206
+Debug: allotted table for 206
+Debug: processing request for a table by: 291
+Debug: allotted table for 291
+Debug: processing request for a table by: 330
+Debug: 330 already has a table.
+Debug: processing request for a table by: 371
+Debug: allotted table for 371
+Debug: processing request for a table by: 151
+Debug: allotted table for 151
+Debug: processing request for a table by: 207
+Debug: allotted table for 207
+Debug: processing request for a table by: 302
+Debug: allotted table for 302
+Debug: processing request for a table by: 394
+Debug: allotted table for 394
+Debug: processing request for a table by: 349
+Debug: allotted table for 349
+Debug: processing request for a table by: 30
+Debug: allotted table for 30
+Debug: processing request for a table by: 224
+Debug: allotted table for 224
+Debug: processing request for a table by: 85
+Debug: allotted table for 85
+Debug: processing request for a table by: 355
+Debug: allotted table for 355
+Debug: processing request for a table by: 357
+Debug: allotted table for 357
+Debug: processing request for a table by: 241
+Debug: 241 already has a table.
+Debug: processing request for a table by: 167
+Debug: allotted table for 167
+Debug: processing request for a table by: 177
+Debug: allotted table for 177
+Debug: processing request for a table by: 332
+Debug: allotted table for 332
+Debug: processing request for a table by: 309
+Debug: allotted table for 309
+Debug: processing request for a table by: 145
+Debug: allotted table for 145
+Debug: processing request for a table by: 40
+Debug: allotted table for 40
+Debug: processing request for a table by: 227
+Debug: allotted table for 227
+Debug: processing request for a table by: 124
+Debug: allotted table for 124
+Debug: processing request for a table by: 338
+Debug: allotted table for 338
+Debug: processing request for a table by: 339
+Debug: 339 already has a table.
+Debug: processing request for a table by: 119
+Debug: 119 already has a table.
+Debug: processing request for a table by: 83
+Debug: allotted table for 83
+Debug: processing request for a table by: 130
+Debug: allotted table for 130
+Debug: processing request for a table by: 142
+Debug: 142 already has a table.
+Debug: processing request for a table by: 34
+Debug: allotted table for 34
+Debug: processing request for a table by: 316
+Debug: allotted table for 316
+Debug: processing request for a table by: 240
+Debug: allotted table for 240
+Debug: processing request for a table by: 59
+Debug: allotted table for 59
+Debug: processing request for a table by: 305
+Debug: allotted table for 305
+Debug: processing request for a table by: 331
+Debug: allotted table for 331
+Debug: processing request for a table by: 378
+Debug: allotted table for 378
+Debug: processing request for a table by: 307
+Debug: allotted table for 307
+Debug: processing request for a table by: 74
+Debug: 74 already has a table.
+Debug: processing request for a table by: 387
+Debug: allotted table for 387
+Debug: processing request for a table by: 222
+Debug: 222 already has a table.
+Debug: processing request for a table by: 346
+Debug: allotted table for 346
+Debug: processing request for a table by: 125
+Debug: 125 already has a table.
+Debug: processing request for a table by: 273
+Debug: allotted table for 273
+Debug: processing request for a table by: 271
+Debug: allotted table for 271
+Debug: processing request for a table by: 230
+Debug: allotted table for 230
+Debug: processing request for a table by: 378
+Debug: 378 already has a table.
+Debug: processing request for a table by: 374
+Debug: allotted table for 374
+Debug: processing request for a table by: 298
+Debug: allotted table for 298
+Debug: processing request for a table by: 113
+Debug: allotted table for 113
+Debug: processing request for a table by: 387
+Debug: 387 already has a table.
+Debug: processing request for a table by: 91
+Debug: allotted table for 91
+Debug: processing request for a table by: 362
+Debug: 362 already has a table.
+Debug: processing request for a table by: 237
+Debug: 237 already has a table.
+Debug: processing request for a table by: 356
+Debug: allotted table for 356
+Debug: processing request for a table by: 368
+Debug: allotted table for 368
+Debug: processing request for a table by: 56
+Debug: allotted table for 56
+Debug: processing request for a table by: 375
+Debug: allotted table for 375
+Debug: processing request for a table by: 32
+Debug: allotted table for 32
+Debug: processing request for a table by: 53
+Debug: allotted table for 53
+Debug: processing request for a table by: 151
+Debug: 151 already has a table.
+Debug: processing request for a table by: 351
+Debug: allotted table for 351
+Debug: processing request for a table by: 142
+Debug: 142 already has a table.
+Debug: processing request for a table by: 125
+Debug: 125 already has a table.
+Debug: processing request for a table by: 367
+Debug: allotted table for 367
+Debug: processing request for a table by: 231
+Debug: allotted table for 231
+Debug: processing request for a table by: 308
+Debug: allotted table for 308
+Debug: processing request for a table by: 192
+Debug: allotted table for 192
+Debug: processing request for a table by: 8
+Debug: allotted table for 8
+Debug: processing request for a table by: 138
+Debug: allotted table for 138
+Debug: processing request for a table by: 258
+Debug: allotted table for 258
+Debug: processing request for a table by: 288
+Debug: allotted table for 288
+Debug: processing request for a table by: 154
+Debug: 154 already has a table.
+Debug: processing request for a table by: 384
+Debug: allotted table for 384
+Debug: processing request for a table by: 146
+Debug: 146 already has a table.
+Debug: processing request for a table by: 110
+Debug: allotted table for 110
+Debug: processing request for a table by: 210
+Debug: allotted table for 210
+Debug: processing request for a table by: 159
+Debug: 159 already has a table.
+Debug: processing request for a table by: 222
+Debug: 222 already has a table.
+Debug: processing request for a table by: 189
+Debug: allotted table for 189
+Debug: processing request for a table by: 23
+Debug: allotted table for 23
+Debug: processing request for a table by: 147
+Debug: allotted table for 147
+Debug: processing request for a table by: 307
+Debug: 307 already has a table.
+Debug: processing request for a table by: 231
+Debug: 231 already has a table.
+Debug: processing request for a table by: 14
+Debug: allotted table for 14
+Debug: processing request for a table by: 369
+Debug: allotted table for 369
+Debug: processing request for a table by: 101
+Debug: 101 already has a table.
+Debug: processing request for a table by: 192
+Debug: 192 already has a table.
+Debug: processing request for a table by: 363
+Debug: allotted table for 363
+Debug: processing request for a table by: 56
+Debug: 56 already has a table.
+Debug: processing request for a table by: 211
+Debug: allotted table for 211
+Debug: processing request for a table by: 360
+Debug: allotted table for 360
+Debug: processing request for a table by: 25
+Debug: allotted table for 25
+Debug: processing request for a table by: 138
+Debug: 138 already has a table.
+Debug: processing request for a table by: 349
+Debug: 349 already has a table.
+Debug: processing request for a table by: 84
+Debug: allotted table for 84
+Debug: processing request for a table by: 396
+Debug: allotted table for 396
+Debug: processing request for a table by: 42
+Debug: 42 already has a table.
+Debug: processing request for a table by: 3
+Debug: allotted table for 3
+Debug: processing request for a table by: 351
+Debug: 351 already has a table.
+Debug: processing request for a table by: 292
+Debug: allotted table for 292
+Debug: processing request for a table by: 37
+Debug: allotted table for 37
+Debug: processing request for a table by: 175
+Debug: allotted table for 175
+Debug: processing request for a table by: 221
+Debug: allotted table for 221
+Debug: processing request for a table by: 197
+Debug: allotted table for 197
+Debug: processing request for a table by: 22
+Debug: allotted table for 22
+Debug: processing request for a table by: 149
+Debug: allotted table for 149
+Debug: processing request for a table by: 400
+Debug: allotted table for 400
+Debug: processing request for a table by: 69
+Debug: 69 already has a table.
+Debug: processing request for a table by: 85
+Debug: 85 already has a table.
+Debug: processing request for a table by: 282
+Debug: allotted table for 282
+Debug: processing request for a table by: 335
+Debug: 335 already has a table.
+Debug: processing request for a table by: 54
+Debug: allotted table for 54
+Debug: processing request for a table by: 400
+Debug: 400 already has a table.
+Debug: processing request for a table by: 19
+Debug: allotted table for 19
+Debug: processing request for a table by: 339
+Debug: 339 already has a table.
+Debug: processing request for a table by: 101
+Debug: 101 already has a table.
+Debug: processing request for a table by: 189
+Debug: 189 already has a table.
+Debug: processing request for a table by: 128
+Debug: allotted table for 128
+Debug: processing request for a table by: 68
+Debug: 68 already has a table.
+Debug: processing request for a table by: 129
+Debug: allotted table for 129
+Debug: processing request for a table by: 94
+Debug: allotted table for 94
+Debug: processing request for a table by: 249
+Debug: 249 already has a table.
+Debug: processing request for a table by: 84
+Debug: 84 already has a table.
+Debug: processing request for a table by: 208
+Debug: allotted table for 208
+Debug: processing request for a table by: 22
+Debug: 22 already has a table.
+Debug: processing request for a table by: 311
+Debug: allotted table for 311
+Debug: processing request for a table by: 218
+Debug: allotted table for 218
+Debug: processing request for a table by: 14
+Debug: 14 already has a table.
+Debug: processing request for a table by: 315
+Debug: allotted table for 315
+Debug: processing request for a table by: 310
+Debug: allotted table for 310
+Debug: processing request for a table by: 17
+Debug: allotted table for 17
+Debug: processing request for a table by: 136
+Debug: allotted table for 136
+Debug: processing request for a table by: 252
+Debug: allotted table for 252
+Debug: processing request for a table by: 201
+Debug: allotted table for 201
+Debug: processing request for a table by: 50
+Debug: allotted table for 50
+Debug: processing request for a table by: 120
+Debug: allotted table for 120
+Debug: processing request for a table by: 357
+Debug: 357 already has a table.
+Debug: processing request for a table by: 399
+Debug: allotted table for 399
+Debug: processing request for a table by: 304
+Debug: 304 already has a table.
+Debug: processing request for a table by: 225
+Debug: allotted table for 225
+Debug: processing request for a table by: 209
+Debug: allotted table for 209
+Debug: processing request for a table by: 245
+Debug: allotted table for 245
+Debug: processing request for a table by: 210
+Debug: 210 already has a table.
+Debug: processing request for a table by: 190
+Debug: allotted table for 190
+Debug: processing request for a table by: 303
+Debug: 303 already has a table.
+Debug: processing request for a table by: 396
+Debug: 396 already has a table.
+Debug: processing request for a table by: 86
+Debug: allotted table for 86
+Debug: processing request for a table by: 294
+Debug: allotted table for 294
+Debug: processing request for a table by: 344
+Debug: allotted table for 344
+Debug: processing request for a table by: 124
+Debug: 124 already has a table.
+Debug: processing request for a table by: 388
+Debug: allotted table for 388
+Debug: processing request for a table by: 115
+Debug: allotted table for 115
+Debug: processing request for a table by: 304
+Debug: 304 already has a table.
+Debug: processing request for a table by: 249
+Debug: 249 already has a table.
+Debug: processing request for a table by: 1
+Debug: allotted table for 1
+Debug: processing request for a table by: 259
+Debug: allotted table for 259
+Debug: processing request for a table by: 219
+Debug: allotted table for 219
+Debug: processing request for a table by: 181
+Debug: allotted table for 181
+Debug: processing request for a table by: 197
+Debug: 197 already has a table.
+Debug: processing request for a table by: 399
+Debug: 399 already has a table.
+Debug: processing request for a table by: 82
+Debug: 82 already has a table.
+Debug: processing request for a table by: 390
+Debug: allotted table for 390
+Debug: processing request for a table by: 399
+Debug: 399 already has a table.
+Debug: processing request for a table by: 10
+Debug: allotted table for 10
+Debug: processing request for a table by: 358
+Debug: 358 already has a table.
+Debug: processing request for a table by: 73
+Debug: allotted table for 73
+Debug: processing request for a table by: 23
+Debug: 23 already has a table.
+Debug: processing request for a table by: 139
+Debug: allotted table for 139
+Debug: processing request for a table by: 293
+Debug: 293 already has a table.
+Debug: processing request for a table by: 39
+Debug: allotted table for 39
+Debug: processing request for a table by: 180
+Debug: allotted table for 180
+Debug: processing request for a table by: 191
+Debug: 191 already has a table.
+Debug: processing request for a table by: 58
+Debug: allotted table for 58
+Debug: processing request for a table by: 359
+Debug: allotted table for 359
+Debug: processing request for a table by: 192
+Debug: 192 already has a table.
+Debug: processing request for a table by: 216
+Debug: allotted table for 216
+Debug: processing request for a table by: 89
+Debug: allotted table for 89
+Debug: processing request for a table by: 357
+Debug: 357 already has a table.
+Debug: processing request for a table by: 312
+Debug: allotted table for 312
+Debug: processing request for a table by: 203
+Debug: allotted table for 203
+Debug: processing request for a table by: 235
+Debug: allotted table for 235
+Debug: processing request for a table by: 273
+Debug: 273 already has a table.
+Debug: processing request for a table by: 56
+Debug: 56 already has a table.
+Debug: processing request for a table by: 329
+Debug: allotted table for 329
+Debug: processing request for a table by: 247
+Debug: 247 already has a table.
+Debug: processing request for a table by: 363
+Debug: 363 already has a table.
+Debug: processing request for a table by: 87
+Debug: allotted table for 87
+Debug: processing request for a table by: 76
+Debug: allotted table for 76
+Debug: processing request for a table by: 34
+Debug: 34 already has a table.
+Debug: processing request for a table by: 270
+Debug: 270 already has a table.
+Debug: processing request for a table by: 143
+Debug: 143 already has a table.
+Debug: processing request for a table by: 245
+Debug: 245 already has a table.
+Debug: processing request for a table by: 217
+Debug: allotted table for 217
+Debug: processing request for a table by: 282
+Debug: 282 already has a table.
+Debug: processing request for a table by: 399
+Debug: 399 already has a table.
+Debug: processing request for a table by: 323
+Debug: allotted table for 323
+Debug: processing request for a table by: 252
+Debug: 252 already has a table.
+Debug: processing request for a table by: 22
+Debug: 22 already has a table.
+Debug: processing request for a table by: 100
+Debug: allotted table for 100
+Debug: processing request for a table by: 358
+Debug: 358 already has a table.
+Debug: processing request for a table by: 77
+Debug: allotted table for 77
+Debug: processing request for a table by: 293
+Debug: 293 already has a table.
+Debug: processing request for a table by: 390
+Debug: 390 already has a table.
+Debug: processing request for a table by: 276
+Debug: allotted table for 276
+Debug: processing request for a table by: 313
+Debug: 313 already has a table.
+Debug: processing request for a table by: 201
+Debug: 201 already has a table.
+Debug: processing request for a table by: 111
+Debug: allotted table for 111
+Debug: processing request for a table by: 204
+Debug: allotted table for 204
+Debug: processing request for a table by: 70
+Debug: allotted table for 70
+Debug: processing request for a table by: 262
+Debug: 1 was politely asked to leave
+Debug: allotted table for 262
+Debug: processing request for a table by: 289
+Debug: 289 already has a table.
+Debug: processing request for a table by: 202
+Debug: 3 was politely asked to leave
+Debug: allotted table for 202
+Debug: processing request for a table by: 190
+Debug: 190 already has a table.
+Debug: processing request for a table by: 56
+Debug: 56 already has a table.
+Debug: processing request for a table by: 24
+Debug: 8 was politely asked to leave
+Debug: allotted table for 24
+Debug: processing request for a table by: 203
+Debug: 203 already has a table.
+Debug: processing request for a table by: 186
+Debug: 10 was politely asked to leave
+Debug: allotted table for 186
+Debug: processing request for a table by: 183
+Debug: 30 was politely asked to leave
+Debug: allotted table for 183
+Debug: processing request for a table by: 286
+Debug: 32 was politely asked to leave
+Debug: allotted table for 286
+Debug: processing request for a table by: 289
+Debug: 289 already has a table.
+Debug: processing request for a table by: 227
+Debug: 227 already has a table.
+Debug: processing request for a table by: 218
+Debug: 218 already has a table.
+Debug: processing request for a table by: 158
+Debug: 37 was politely asked to leave
+Debug: allotted table for 158
+Debug: processing request for a table by: 233
+Debug: 38 was politely asked to leave
+Debug: allotted table for 233
+Debug: processing request for a table by: 133
+Debug: 39 was politely asked to leave
+Debug: allotted table for 133
+Debug: processing request for a table by: 170
+Debug: 50 was politely asked to leave
+Debug: allotted table for 170
+Debug: processing request for a table by: 155
+Debug: 53 was politely asked to leave
+Debug: allotted table for 155
+Debug: processing request for a table by: 122
+Debug: 58 was politely asked to leave
+Debug: allotted table for 122
+Debug: processing request for a table by: 390
+Debug: 390 already has a table.
+Debug: processing request for a table by: 377
+Debug: 59 was politely asked to leave
+Debug: allotted table for 377
+Debug: processing request for a table by: 130
+Debug: 130 already has a table.
+Debug: processing request for a table by: 369
+Debug: 369 already has a table.
+Debug: processing request for a table by: 293
+Debug: 293 already has a table.
+Debug: processing request for a table by: 226
+Debug: 70 was politely asked to leave
+Debug: allotted table for 226
+Debug: processing request for a table by: 156
+Debug: 73 was politely asked to leave
+Debug: allotted table for 156
+Debug: processing request for a table by: 235
+Debug: 235 already has a table.
+Debug: processing request for a table by: 150
+Debug: 76 was politely asked to leave
+Debug: allotted table for 150
+Debug: processing request for a table by: 242
+Debug: 77 was politely asked to leave
+Debug: allotted table for 242
+Debug: processing request for a table by: 313
+Debug: 313 already has a table.
+Debug: processing request for a table by: 146
+Debug: 146 already has a table.
+Debug: processing request for a table by: 61
+Debug: 83 was politely asked to leave
+Debug: allotted table for 61
+Debug: processing request for a table by: 119
+Debug: 119 already has a table.
+Debug: processing request for a table by: 154
+Debug: 154 already has a table.
+Debug: processing request for a table by: 140
+Debug: 61 was politely asked to leave
+Debug: allotted table for 140
+Debug: processing request for a table by: 24
+Debug: 24 already has a table.
+Debug: processing request for a table by: 280
+Debug: 86 was politely asked to leave
+Debug: allotted table for 280
+Debug: processing request for a table by: 397
+Debug: 87 was politely asked to leave
+Debug: allotted table for 397
+Debug: processing request for a table by: 288
+Debug: 288 already has a table.
+Debug: processing request for a table by: 130
+Debug: 130 already has a table.
+Debug: processing request for a table by: 150
+Debug: 150 already has a table.
+Debug: processing request for a table by: 238
+Debug: 91 was politely asked to leave
+Debug: allotted table for 238
+Debug: processing request for a table by: 267
+Debug: 92 was politely asked to leave
+Debug: allotted table for 267
+Debug: processing request for a table by: 150
+Debug: 150 already has a table.
+Debug: processing request for a table by: 194
+Debug: 94 was politely asked to leave
+Debug: allotted table for 194
+Debug: processing request for a table by: 396
+Debug: 396 already has a table.
+Debug: processing request for a table by: 98
+Debug: 100 was politely asked to leave
+Debug: allotted table for 98
+Debug: processing request for a table by: 17
+Debug: 17 already has a table.
+Debug: processing request for a table by: 287
+Debug: 98 was politely asked to leave
+Debug: allotted table for 287
+Debug: processing request for a table by: 106
+Debug: 106 already has a table.
+Debug: processing request for a table by: 89
+Debug: 89 already has a table.
+Debug: processing request for a table by: 283
+Debug: 107 was politely asked to leave
+Debug: allotted table for 283
+Debug: processing request for a table by: 56
+Debug: 56 already has a table.
+Debug: processing request for a table by: 135
+Debug: 110 was politely asked to leave
+Debug: allotted table for 135
+Debug: processing request for a table by: 115
+Debug: 115 already has a table.
+Debug: processing request for a table by: 102
+Debug: 111 was politely asked to leave
+Debug: allotted table for 102
+Debug: processing request for a table by: 117
+Debug: 102 was politely asked to leave
+Debug: allotted table for 117
+Debug: processing request for a table by: 272
+Debug: 112 was politely asked to leave
+Debug: allotted table for 272
+Debug: processing request for a table by: 187
+Debug: 117 was politely asked to leave
+Debug: allotted table for 187
+Debug: processing request for a table by: 264
+Debug: 120 was politely asked to leave
+Debug: allotted table for 264
+Debug: processing request for a table by: 314
+Debug: 122 was politely asked to leave
+Debug: allotted table for 314
+Debug: processing request for a table by: 356
+Debug: 356 already has a table.
+Debug: processing request for a table by: 386
+Debug: 123 was politely asked to leave
+Debug: allotted table for 386
+Debug: processing request for a table by: 54
+Debug: 54 already has a table.
+Debug: processing request for a table by: 113
+Debug: 113 already has a table.
+Debug: processing request for a table by: 9
+Debug: 127 was politely asked to leave
+Debug: allotted table for 9
+Debug: processing request for a table by: 233
+Debug: 233 already has a table.
+Debug: processing request for a table by: 146
+Debug: 146 already has a table.
+Debug: processing request for a table by: 314
+Debug: 314 already has a table.
+Debug: processing request for a table by: 157
+Debug: 9 was politely asked to leave
+Debug: allotted table for 157
+Debug: processing request for a table by: 322
+Debug: 128 was politely asked to leave
+Debug: allotted table for 322
+Debug: processing request for a table by: 359
+Debug: 359 already has a table.
+Debug: processing request for a table by: 47
+Debug: 129 was politely asked to leave
+Debug: allotted table for 47
+Debug: processing request for a table by: 383
+Debug: 383 already has a table.
+Debug: processing request for a table by: 82
+Debug: 82 already has a table.
+Debug: processing request for a table by: 145
+Debug: 145 already has a table.
+Debug: processing request for a table by: 397
+Debug: 397 already has a table.
+Debug: processing request for a table by: 223
+Debug: 47 was politely asked to leave
+Debug: allotted table for 223
+Debug: processing request for a table by: 330
+Debug: 330 already has a table.
+Debug: processing request for a table by: 162
+Debug: 133 was politely asked to leave
+Debug: allotted table for 162
+Debug: processing request for a table by: 336
+Debug: 136 was politely asked to leave
+Debug: allotted table for 336
+Debug: processing request for a table by: 51
+Debug: 139 was politely asked to leave
+Debug: allotted table for 51
+Debug: processing request for a table by: 374
+Debug: 374 already has a table.
+Debug: processing request for a table by: 67
+Debug: 51 was politely asked to leave
+Debug: allotted table for 67
+Debug: processing request for a table by: 45
+Debug: 45 already has a table.
+Debug: processing request for a table by: 60
+Debug: 60 already has a table.
+Debug: processing request for a table by: 293
+Debug: 293 already has a table.
+Debug: processing request for a table by: 40
+Debug: 40 already has a table.
+Debug: processing request for a table by: 54
+Debug: 54 already has a table.
+Debug: processing request for a table by: 25
+Debug: 25 already has a table.
+Debug: processing request for a table by: 155
+Debug: 155 already has a table.
+Debug: processing request for a table by: 311
+Debug: 311 already has a table.
+Debug: processing request for a table by: 346
+Debug: 346 already has a table.
+Debug: processing request for a table by: 250
+Debug: 67 was politely asked to leave
+Debug: allotted table for 250
+Debug: processing request for a table by: 387
+Debug: 387 already has a table.
+Debug: processing request for a table by: 314
+Debug: 314 already has a table.
+Debug: processing request for a table by: 75
+Debug: 140 was politely asked to leave
+Debug: allotted table for 75
+Debug: processing request for a table by: 23
+Debug: 23 already has a table.
+Debug: processing request for a table by: 169
+Debug: 75 was politely asked to leave
+Debug: allotted table for 169
+Debug: processing request for a table by: 19
+Debug: 19 already has a table.
+Debug: processing request for a table by: 388
+Debug: 388 already has a table.
+Debug: processing request for a table by: 306
+Debug: 147 was politely asked to leave
+Debug: allotted table for 306
+Debug: processing request for a table by: 359
+Debug: 359 already has a table.
+Debug: processing request for a table by: 192
+Debug: 192 already has a table.
+Debug: processing request for a table by: 203
+Debug: 203 already has a table.
+Debug: processing request for a table by: 26
+Debug: 149 was politely asked to leave
+Debug: allotted table for 26
+Debug: processing request for a table by: 78
+Debug: 26 was politely asked to leave
+Debug: allotted table for 78
+Debug: processing request for a table by: 15
+Debug: 78 was politely asked to leave
+Debug: allotted table for 15
+Debug: processing request for a table by: 115
+Debug: 115 already has a table.
+Debug: processing request for a table by: 225
+Debug: 225 already has a table.
+Debug: processing request for a table by: 135
+Debug: 135 already has a table.
+Debug: processing request for a table by: 275
+Debug: 15 was politely asked to leave
+Debug: allotted table for 275
+Debug: processing request for a table by: 373
+Debug: 156 was politely asked to leave
+Debug: allotted table for 373
+Debug: processing request for a table by: 160
+Debug: 157 was politely asked to leave
+Debug: allotted table for 160
+Debug: processing request for a table by: 234
+Debug: 158 was politely asked to leave
+Debug: allotted table for 234
+Debug: processing request for a table by: 71
+Debug: 160 was politely asked to leave
+Debug: allotted table for 71
+Debug: processing request for a table by: 288
+Debug: 288 already has a table.
+Debug: processing request for a table by: 298
+Debug: 298 already has a table.
+Debug: processing request for a table by: 319
+Debug: 71 was politely asked to leave
+Debug: allotted table for 319
+Debug: processing request for a table by: 178
+Debug: 162 was politely asked to leave
+Debug: allotted table for 178
+258

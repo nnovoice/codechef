@@ -12,6 +12,7 @@ int main()
 	}
 
 	int rand_num = rand() % 100 + 1;
+	rand_num = rand() % 1000 + 1;
 	for (int i = 0; i < rand_num; ++i) {
 		random_shuffle(positions, positions + MAX_POSITIONS);
 	}

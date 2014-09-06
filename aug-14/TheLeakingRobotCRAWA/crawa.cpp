@@ -19,7 +19,7 @@ int main()
 						printf ("NO\n");
 				}
 				else { 
-					y *= -1;
+					y = 0 - y;
 					if (y % 2 == 0 && y >= x)
 						printf("YES\n");
 					else
@@ -28,7 +28,7 @@ int main()
 			}
 			else {
 				if (y >= 0) {
-					if (y >= 0 && y <= (x - 1))
+					if (y >= 0 && y <= (x + 1))
 						printf("YES\n");
 					else if (y > (x + 1) && ((y % 2) == 0))
 						printf ("YES\n");
@@ -36,7 +36,7 @@ int main()
 						printf("NO\n");
 				}
 				else {
-					y *= -1;
+					y = 0 - y;
 					if (y > x && ((y % 2) == 0))
 						printf("YES\n");
 					else if (y <= (x - 1))
@@ -47,11 +47,15 @@ int main()
 			}
 		}
 		else { // x < 0 
-			x *= -1;
+			x = 0 - x;
+			if (y < 0) y = 0 - y;
+			
 			if (x % 2 == 0) {
-				if (y > 0 && y <= x)
+				if (y == 0) 
+					printf ("YES\n");
+				else if (y <= x)
 					printf("YES\n");
-				else if (y > (x + 1) && ((y % 2) == 0))
+				else if (y >= (x + 1) && ((y % 2) == 0))
 					printf ("YES\n");
 				else
 					printf("NO\n");
@@ -60,7 +64,6 @@ int main()
 				if (y == 0) 
 					printf ("NO\n");
 				else {
-					if (y < 0) y *= -1;
 					if (y > x && ((y % 2) == 0))
 						printf ("YES\n");
 					else

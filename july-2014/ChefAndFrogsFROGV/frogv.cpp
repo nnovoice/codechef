@@ -7,6 +7,7 @@ const int MAX_POSITIONS = 100001;
 int positions[MAX_POSITIONS];
 int sortedPositions[MAX_POSITIONS];
 int diffs[MAX_POSITIONS];
+int communications[MAX_POSITIONS];
 
 int GetIndexFromSortedPositions(int frogIdx, int start, int end)
 {
@@ -28,6 +29,19 @@ int GetIndexFromSortedPositions(int frogIdx, int start, int end)
 	return mid;
 }
 
+bool IsChannelOpen(int startIdx, int endIdx)
+{
+	if (endIdx - startIdx <= 1) {
+		return (communications[endIdx - startIdx] == 0) ? true : false;
+	}
+
+	int mid = startIdx + (endIdx - startIdx) / 2;
+
+	if (IsChannelOpen (startIdx, mid) == false) return false;
+
+	return IsChannelOpen (mid, endIdx);
+}
+
 bool CanFrogsCommunicate(int frog1Idx, int frog2Idx, int n, int k)
 {
 	bool canCommunicate = false;
@@ -44,16 +58,17 @@ bool CanFrogsCommunicate(int frog1Idx, int frog2Idx, int n, int k)
 	//printf("Debug: After swap, frog1SortedIdx= %d and frog2SortedIdx= %d\n", frog1SortedIdx, frog2SortedIdx);
 
 	// We are comparing data at i+1 with data at i, so, i < frog2SortedIdx; is the correct invariant below.
-	canCommunicate = true;
-	for (int i = frog1SortedIdx; i < frog2SortedIdx; ++i) {
-		//printf("Debug: k= %d pos(i+1)= %d and pos(i)= %d diff= %d\n", k, sortedPositions[i + 1], sortedPositions[i], diffs[i]);
-		if (diffs[i] > k) {
-			return false;
-		}
-	}
-	return canCommunicate;
+//	canCommunicate = true;
+//	for (int i = frog1SortedIdx; i < frog2SortedIdx; ++i) {
+//		//printf("Debug: k= %d pos(i+1)= %d and pos(i)= %d diff= %d\n", k, sortedPositions[i + 1], sortedPositions[i], diffs[i]);
+//		if (diffs[i] > k) {
+//			return false;
+//		}
+//	}
+//	return canCommunicate;
+	return IsChannelOpen(frog1SortedIdx, frog2SortedIdx);
 }
-
+a
 int main()
 {
 	int n = 0, k = 0, p = 0;
@@ -75,6 +90,9 @@ int main()
 	for (int i = 1; i < n; ++i) {
 		diffs[i] = sortedPositions[i + 1] - sortedPositions[i];
 		//printf("D:(%d) ", diffs[i]);
+		if (diffs[i] > k) {
+			communications[i] = 1; // 1 means blocked, 0 (by default) means open :-)
+		}
 	}
 
 	for (int i = 0; i < p; ++i) {

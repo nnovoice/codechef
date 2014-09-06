@@ -1,0 +1,116 @@
+Debug: n=2 m=14
+1 2 3 1 3 1 3 1 3 2 2 2 2 2 Debug: 
+top=4,1
+top=4,3
+top=6,2
+Debug: processing request for a table by: 1
+Debug: allotted table for 1
+Debug: # of times Hark had to clean= 1
+Debug: processing request for a table by: 2
+Debug: allotted table for 2
+Debug: # of times Hark had to clean= 2
+Debug: processing request for a table by: 3
+Debug: 1 was politely asked to leave
+Debug: allotted table for 3
+Debug: # of times Hark had to clean= 3
+Debug: processing request for a table by: 1
+Debug: 3 was politely asked to leave
+Debug: allotted table for 1
+Debug: # of times Hark had to clean= 4
+Debug: processing request for a table by: 3
+Debug: 1 was politely asked to leave
+Debug: allotted table for 3
+Debug: # of times Hark had to clean= 5
+Debug: processing request for a table by: 1
+Debug: 3 was politely asked to leave
+Debug: allotted table for 1
+Debug: # of times Hark had to clean= 6
+Debug: processing request for a table by: 3
+Debug: 1 was politely asked to leave
+Debug: allotted table for 3
+Debug: # of times Hark had to clean= 7
+Debug: processing request for a table by: 1
+Debug: 3 was politely asked to leave
+Debug: allotted table for 1
+Debug: # of times Hark had to clean= 8
+Debug: processing request for a table by: 3
+Debug: 1 was politely asked to leave
+Debug: allotted table for 3
+Debug: # of times Hark had to clean= 9
+Debug: processing request for a table by: 2
+Debug: 2 already has a table.
+Debug: processing request for a table by: 2
+Debug: 2 already has a table.
+Debug: processing request for a table by: 2
+Debug: 2 already has a table.
+Debug: processing request for a table by: 2
+Debug: 2 already has a table.
+Debug: processing request for a table by: 2
+Debug: 2 already has a table.
+9
+Debug: n=3 m=20
+7 10 1 2 10 3 10 4 2 3 10 3 2 1 2 10 1 7 10 1 Debug: 
+top=1,4
+top=2,7
+top=3,3
+top=4,1
+top=4,2
+top=6,10
+Debug: processing request for a table by: 7
+Debug: allotted table for 7
+Debug: # of times Hark had to clean= 1
+Debug: processing request for a table by: 10
+Debug: allotted table for 10
+Debug: # of times Hark had to clean= 2
+Debug: processing request for a table by: 1
+Debug: allotted table for 1
+Debug: # of times Hark had to clean= 3
+Debug: processing request for a table by: 2
+Debug: 7 was politely asked to leave
+Debug: allotted table for 2
+Debug: # of times Hark had to clean= 4
+Debug: processing request for a table by: 10
+Debug: 10 already has a table.
+Debug: processing request for a table by: 3
+Debug: 1 was politely asked to leave
+Debug: allotted table for 3
+Debug: # of times Hark had to clean= 5
+Debug: processing request for a table by: 10
+Debug: 10 already has a table.
+Debug: processing request for a table by: 4
+Debug: 3 was politely asked to leave
+Debug: allotted table for 4
+Debug: # of times Hark had to clean= 6
+Debug: processing request for a table by: 2
+Debug: 2 already has a table.
+Debug: processing request for a table by: 3
+Debug: 4 was politely asked to leave
+Debug: allotted table for 3
+Debug: # of times Hark had to clean= 7
+Debug: processing request for a table by: 10
+Debug: 10 already has a table.
+Debug: processing request for a table by: 3
+Debug: 3 already has a table.
+Debug: processing request for a table by: 2
+Debug: 2 already has a table.
+Debug: processing request for a table by: 1
+Debug: 3 was politely asked to leave
+Debug: allotted table for 1
+Debug: # of times Hark had to clean= 8
+Debug: processing request for a table by: 2
+Debug: 2 already has a table.
+Debug: processing request for a table by: 10
+Debug: 10 already has a table.
+Debug: processing request for a table by: 1
+Debug: 1 already has a table.
+Debug: processing request for a table by: 7
+Debug: 1 was politely asked to leave
+Debug: allotted table for 7
+Debug: # of times Hark had to clean= 9
+Debug: processing request for a table by: 10
+Debug: 10 already has a table.
+Debug: processing request for a table by: 1
+Debug: 7 was politely asked to leave
+Debug: allotted table for 1
+Debug: # of times Hark had to clean= 10
+10
