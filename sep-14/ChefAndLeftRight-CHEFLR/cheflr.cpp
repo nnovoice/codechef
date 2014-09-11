@@ -1,12 +1,13 @@
 #include <stdio.h>
+using namespace std;
 
 typedef unsigned long long int ULLI;
 const ULLI MODNUM = 1000000007;
 
 int main()
 {
-	int nCases = 0, level = 1;
-	ULLI num = 1, temp = 1;
+	int nCases = 0, level = 0;
+	ULLI num = 1ULL, unmodded_num = 1ULL, modofunmodnum = 1ULL;
 	char c = ' ';
 	scanf("%d", &nCases);
 	scanf("%c", &c); // read the '\n'
@@ -14,28 +15,44 @@ int main()
 	while(nCases--)
 	{
 		level = 1;
-		num   = 1;
+		num   = 1ULL;
+		//unmodded_num = 1ULL;
 		
 		while(scanf("%c", &c) != EOF) {
-			if (c == '\n') break;
-			temp = num * 2;
-			num = (temp < MODNUM) ? temp : (temp % MODNUM); 
+			if (c == '\n')  {
+				printf("%llu\n", num);
+				c = ' ';
+				break;
+			}
+
+			++level;
 			
-			// odd level? L = 2 * num; R = 2 * num + 2;
-			if ((level & 1) != 0) { 
+			num = ((num % MODNUM) * 2ULL) % MODNUM;
+			//unmodded_num *= 2ULL;
+			
+			// even level L = 2 * num; R = 2 * num + 2;
+			if ((level & 1) == 0) { 
 				// (c == 'l') is just 2 * num
-				if (c == 'r')
-					num = (num + 2) % MODNUM; 
+				if (c == 'r') {
+					num += 2ULL; 
+					//unmodded_num += 2; 
+				}
 			}
 			else {
-				// even level: L = 2 * num - 1; R = 2 * num + 1;
-				num = (c == 'l') ? ((num - 1) % MODNUM) : ((num + 1) % MODNUM);
+				// odd level: L = 2 * num - 1; R = 2 * num + 1;
+				num = (c == 'l') ? ((num - 1ULL)) : ((num + 1ULL));
+				//unmodded_num = (c == 'l') ? (unmodded_num - 1ULL) : (unmodded_num + 1ULL);
 			}
-			//printf("Debug c=%c temp=%llu num=%llu\n", c, temp, num);
 			
-			++level;
+			num %= MODNUM;
+			//modofunmodnum = unmodded_num % MODNUM;
+			//printf("Debug c=%c num=%llu unmodded_num=%llu modofunmod=%llu\n", c, num, unmodded_num, modofunmodnum);
+			
 		}
-		printf("%llu\n", num);
+		
+		if (c != ' ') {
+			printf("%llu\n", num);
+		}
 	}
 	
 	return 0;
