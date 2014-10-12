@@ -1,10 +1,13 @@
 #include <stdio.h>
+#include <string.h>
 
 typedef unsigned long long int ULLI;
 const ULLI MODNUM = 1000000007;
+const int MAX_LEN = 100010;
 
 int main()
 {
+	char input[MAX_LEN] = {'\0'};
 	int nCases = 0, level = 0, retVal = 0;
 	ULLI num = 1ULL; 
 	char c = ' ';
@@ -13,15 +16,15 @@ int main()
 	
 	while(nCases--)
 	{
+		memset(input, '\0', sizeof(char) * MAX_LEN);
 		level = 1;
 		num   = 1ULL;
 		
-		while(1) {
-			retVal = scanf("%c", &c);
-			if (c == '\n' || retVal == EOF) {
-				printf("%llu\n", num);
-				break;
-			}
+		scanf("%s", input);
+		//printf("Debug input %s=", input);
+
+		for (int i = 0; input[i] != '\0'; ++i) {
+			c = input[i];
 
 			++level;
 			
@@ -41,7 +44,7 @@ int main()
 			
 			num %= MODNUM;
 		}
-		
+		printf("%llu\n", num);
 	}
 	
 	return 0;
