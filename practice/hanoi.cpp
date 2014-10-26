@@ -21,7 +21,8 @@ int MoveDisk(int n,
 	tgt[*tgtTop] = src[*srcTop - 1];
 	*srcTop -=1;
 	*tgtTop += 1;
-	printf("Moved disk=%d from %c to %c srcTop=%d targetTop=%d\n", src[*srcTop], srcID, tgtID, *srcTop, *tgtTop);
+	//printf("Moved disk=%d from %c to %c srcTop=%d targetTop=%d\n", src[*srcTop], srcID, tgtID, *srcTop, *tgtTop);
+	printf("Moved disk=%d from %c to %c\n", src[*srcTop], srcID, tgtID);
 	return 0;	
 }
 
@@ -30,19 +31,22 @@ int hanoi(int n,
 	int* tgt, int* tgtTop, char tgtID,
 	int* temp, int* tempTop, char tempID)
 {
-	printf ("Debug: hanoi called with n=%d, src=%c, srcTop=%d, tgt=%c, tgtTop=%d, temp=%c, tempTop=%d\n", n, 
-		srcID, *srcTop, tgtID, *tgtTop, tempID, *tempTop);
+	/*printf ("Debug: hanoi called with n=%d, src=%c, srcTop=%d, tgt=%c, tgtTop=%d, temp=%c, tempTop=%d\n", n, 
+		srcID, *srcTop, tgtID, *tgtTop, tempID, *tempTop);*/
 
 	if (n == 1) {
 		MoveDisk(n, src, srcTop, srcID, tgt, tgtTop, tgtID, temp, tempTop, tempID);
 		return 0;
 	}
-	else if ((*srcTop - 1) == 1) { // just one disk left to move
+	else if ((*srcTop - 1) == 0) { // just one disk left to move
+		//printf ("Debug: HIT the source top - 1 condition\n");
 		if (tgt[*tgtTop - 1] > src[*srcTop - 1]) {
+			//printf ("Debug: TARGET top > source top condition\n");
 			MoveDisk(src[*srcTop - 1], src, srcTop, srcID, tgt, tgtTop, tgtID, temp, tempTop, tempID);
 		}
 		else {
 			if (temp[*tempTop - 1] > src[*srcTop - 1]) {
+				//printf ("Debug: TEMP top > source top condition\n");
 				MoveDisk(src[*srcTop - 1], src, srcTop, srcID, temp, tempTop, tempID, tgt, tgtTop, tgtID);
 			}
 		}
