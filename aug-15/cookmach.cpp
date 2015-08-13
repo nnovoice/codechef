@@ -15,12 +15,10 @@ long num_ops(long a, long b) {
         nops += 1;
         cout << "debug: " << a << "\t" << b << "\t" << nops << endl;
         if (is_pow_of_2(a)) {
-            while (a != b) {
-                nops += 1;
-                cout << "debug: " << a << "\t" << b << "\t" << nops << endl;
-                if (a < b) a <<= 1;
-                else a >>= 1;
-            }
+            //nops += 1;
+            cout << "debug: " << a << "\t" << b << "\t" << nops << endl;
+            if (a < b) a <<= 1;
+            else a >>= 1;
         }
         else {
             if (a % 2 == 0) a /= 2;
