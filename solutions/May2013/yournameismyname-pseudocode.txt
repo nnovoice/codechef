@@ -1,0 +1,18 @@
+while (testcase--)
+	set matched = true
+	read first string
+	read second string
+	pick the string with smaller length <-assumption?
+	loop from 0 to len of smaller
+		loop from index to len of bigger
+			if match found between outer and inner
+				break
+		if index > len of bigger
+			did not match; set matched = false
+			break
+	if matched is false
+		try the reverse if length is equal
+	else
+		matched :-)
+	
+		
