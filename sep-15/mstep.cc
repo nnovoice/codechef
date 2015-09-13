@@ -2,7 +2,7 @@
 // https://www.codechef.com/SEPT15/problems/MSTEP
 
 #include <stdio.h>
-const int MAX = 2500 + 7;
+const int MAX = 250000 + 7;
 int main()
 {
     
