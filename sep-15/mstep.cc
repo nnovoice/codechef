@@ -2,11 +2,13 @@
 // https://www.codechef.com/SEPT15/problems/MSTEP
 
 #include <stdio.h>
+const int MAX = 2500 + 7;
 int main()
 {
+    
     int T = 0;
     int N= 0, NSquare = 0;
-    int r[501], c[501], v = 0;
+    int r[MAX], c[MAX], v = 0;
     long long int steps = 0;
     int rdiff = 0, cdiff = 0;
 
